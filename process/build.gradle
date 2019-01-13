@@ -1,0 +1,111 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.yumodev.process"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                XG_ACCESS_ID:"2100283243",
+                XG_ACCESS_KEY : "A3685WIJ1KXN",
+        ]
+    }
+
+    signingConfigs {
+        release {
+            // 配置release版本的数字签名证书(为了方便，这里的release版本和debug版本共用一个数字签名证书)
+            storeFile file("../keystore.jks")
+            storePassword "123456"
+            keyAlias "yumodev"
+            keyPassword "123456"
+        }
+    }
+
+
+    buildTypes {
+        debug{
+            debuggable true
+            signingConfig signingConfigs.release
+        }
+        release {
+            //manifestPlaceholders.put("app_label", "@string/app_name")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+
+
+    sourceSets{
+        main{
+            //jniLibs.srcDir 'libs'
+            jniLibs.srcDirs = ['libs', 'libs']
+            jni.srcDirs = []
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "com.android.support:appcompat-v7:$rootProject.ext.support_version"
+    compile "com.android.support:design:$rootProject.ext.support_version"
+    compile "com.android.support:support-v4:$rootProject.ext.support_version"
+    implementation rootProject.ext.ym_android_demo_lib
+    compile 'com.android.support:support-annotations:27.1.1'
+
+
+    compile project(':library')
+    compile project(':processlib')
+    compile project(':xglib')
+
+   // compile 'com.tencent.bugly:crashreport:latest.release'
+//    compile 'com.flurry.android:analytics:8.2.0@aar'
+
+    compile 'com.elvishew:xlog:1.4.0'
+
+
+    compile 'com.umeng.analytics:analytics:latest.integration'
+
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+}
+
+
+def copyAndMvApk(String intoPath){
+    copy {
+        from(buildDir.absolutePath + '/outputs/apk/release/') {
+            include project.name + '-release.apk'
+        }
+        //def intoPath = "./../testplugin/src/main/assets/skin/"
+        println(intoPath)
+        into(intoPath)
+        rename project.name + '-release.apk', 'process-release.apk'
+    }
+}
+
+afterEvaluate {
+    tasks.getByName("assembleRelease").doLast {
+        copyAndMvApk("/Users/yumo/git/py/ympy/flask_hello/static/")
+    }
+}

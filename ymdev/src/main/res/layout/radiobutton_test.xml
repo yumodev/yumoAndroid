@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/common_page_bg">
+
+    <Button
+        android:id="@+id/btn_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="who is click"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radiogroup_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_horizontal_margin"
+            android:dividerPadding="20dip"
+            android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/common_horizontal_margin"
+                android:drawableTop="@drawable/selector_demo"
+                android:drawablePadding="@dimen/common_horizontal_margin"
+                android:layout_weight="1"
+                android:button="@null"
+                android:textColor="@color/black"
+                android:text="radio1"
+                android:gravity="center"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/common_horizontal_margin"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_demo"
+                android:drawablePadding="@dimen/common_horizontal_margin"
+                android:textColor="@color/black"
+                android:text="radio2"
+                android:gravity="center"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_demo"
+                android:drawablePadding="@dimen/common_horizontal_margin"
+                android:textColor="@color/black"
+                android:text="radio3"
+                android:gravity="center"/>
+        </RadioGroup>
+    </LinearLayout>
+
+</LinearLayout>

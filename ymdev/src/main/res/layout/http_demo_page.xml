@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <include 
+        android:id="@+id/header"
+        layout="@layout/header_layout"/>
+     
+     <LinearLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_margin="10dp">
+         
+          <Button android:id="@+id/select_url_btn"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="选择网址"
+             style="@style/text_common_middle"/>
+         
+         <EditText 
+             android:id="@+id/url_text"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="http://www.baidu.com"
+             style="@style/text_common_middle"/>
+         
+     </LinearLayout>
+     
+     <LinearLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_margin="10dp">
+         
+         <TextView  
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Http下载方式："
+             style="@style/text_common_middle"/>
+         
+         <Spinner android:id="@+id/spinner"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"/>
+         
+     </LinearLayout>
+     
+     
+     
+     <Button android:id="@+id/begin_btn"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="下载"/>
+     
+     <ImageView 
+             android:id="@+id/img"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"/>
+     
+
+</LinearLayout>

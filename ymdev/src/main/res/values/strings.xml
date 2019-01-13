@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">yumo</string>
+    <string name="accessibility_service_description">Yumo开启智能辅助安装</string>
+
+</resources>

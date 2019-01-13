@@ -1,0 +1,25 @@
+package com.icongtai.zebra.common.proto;
+
+option java_package = "com.icongtai.zebra.common.proto.builder";
+option java_outer_classname = "SensorDataProtoBuf";
+
+message SensorDatas {
+    /**事件ID*/
+    required string eventId = 1;
+    /**设备ID*/
+    required string deviceId = 2;
+    /**传感器类型*/
+    required string sensorType = 3;
+
+    repeated SensorData sensorList = 4;
+}
+message SensorData {
+    /**格林威治时间戳*/
+    required fixed64 timestamp = 1;
+    /**X轴加速度*/
+    optional float xAccSpeed = 2;
+    /**Y轴加速度*/
+    optional float yAccSpeed = 3;
+    /**Z轴加速度*/
+    optional float zAccSpeed = 4;
+}

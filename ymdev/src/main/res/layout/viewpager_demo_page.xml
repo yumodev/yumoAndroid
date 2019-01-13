@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+     <Spinner 
+         android:id="@+id/spinner"
+         android:layout_width="fill_parent"
+         android:layout_height="40dp"/>
+     
+     <android.support.v4.view.ViewPager
+         android:id="@+id/viewpager"
+         android:layout_width="fill_parent"
+         android:layout_height="0dp"
+         android:layout_weight="1">
+         
+         <android.support.v4.view.PagerTabStrip
+         android:id="@+id/tabstrip"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="top">
+             
+         </android.support.v4.view.PagerTabStrip>
+         
+        <!--   <android.support.v4.view.PagerTitleStrip
+         android:id="@+id/titlestrip"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="top">
+             
+         </android.support.v4.view.PagerTitleStrip> -->
+         
+     </android.support.v4.view.ViewPager>
+     
+     <include android:id="@+id/bottom"
+         layout="@layout/tab_weixin_viewpager_one"
+         android:visibility="visible"/>
+     
+     
+
+</LinearLayout>

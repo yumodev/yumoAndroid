@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setting_key_header_one">setting_key_header_one</string>
+    <string name="setting_key_header_two">setting_key_header_two</string>
+    <string name="setting_key_header_three">setting_key_header_three</string>
+</resources>

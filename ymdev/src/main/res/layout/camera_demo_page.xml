@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <include 
+        android:id="@+id/header"
+        layout="@layout/header_layout"/>
+     
+    <ScrollView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <LinearLayout 
+                android:layout_width="fill_parent"
+           		android:layout_height="wrap_content"
+            	android:orientation="vertical">
+                <Button 
+                    android:id="@+id/btn_one"
+                    android:layout_width="wrap_content"
+           			android:layout_height="wrap_content"
+           			android:text="拍照demo_one"
+                    />
+                
+                <ImageView 
+                    android:id="@+id/image_one"
+                    android:layout_width="wrap_content"
+           			android:layout_height="wrap_content"
+           			android:layout_margin="10dp"
+					tools:ignore="ContentDescription" />
+            </LinearLayout>
+            
+             <LinearLayout 
+                android:layout_width="fill_parent"
+           		android:layout_height="wrap_content"
+            	android:orientation="vertical">
+                <Button 
+                    android:id="@+id/btn_two"
+                    android:layout_width="wrap_content"
+           			android:layout_height="wrap_content"
+           			android:text="拍照demo_two"
+                    />
+                
+                <ImageView 
+                    android:id="@+id/image_two"
+                    android:layout_width="wrap_content"
+           			android:layout_height="wrap_content"
+           			android:layout_margin="10dp"
+					tools:ignore="ContentDescription" />
+            </LinearLayout>
+            
+              <LinearLayout 
+                android:layout_width="fill_parent"
+           		android:layout_height="wrap_content"
+            	android:orientation="vertical">
+                <Button 
+                    android:id="@+id/btn_three"
+                    android:layout_width="wrap_content"
+           			android:layout_height="wrap_content"
+           			android:text="拍照demo_three"
+                    />
+                
+                <ImageView 
+                    android:id="@+id/image_three"
+                    android:layout_width="wrap_content"
+           			android:layout_height="wrap_content"
+           			android:layout_margin="10dp"/>
+            </LinearLayout>
+            
+        </LinearLayout>
+        
+    </ScrollView>
+
+</LinearLayout>

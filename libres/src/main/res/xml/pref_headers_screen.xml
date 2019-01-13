@@ -1,0 +1,20 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <Preference
+        android:key="@string/setting_key_header_one"
+        android:fragment="com.yumo.android.test.activity.setting.TestSettingsActivity$GeneralPreferenceFragment"
+        android:title="@string/pref_header_general" />
+
+    <Preference
+        android:key="@string/setting_key_header_two"
+        android:fragment="com.yumo.android.test.activity.setting.TestSettingsActivity$NotificationPreferenceFragment"
+        android:title="@string/pref_header_notifications" />
+
+    <Preference
+        android:key="@string/setting_key_header_three"
+        android:fragment="com.yumo.android.test.activity.setting.TestPreferenceFragment"
+        android:title="@string/pref_header_data_sync" />
+
+</PreferenceScreen>

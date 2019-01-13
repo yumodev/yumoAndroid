@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow -->
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <gradient
+                        android:startColor="#00000000"
+                        android:endColor="#00000000"
+                        android:centerColor="#00000000"
+                        android:centerX="0.5"
+                        android:centerY="0.5"
+                        android:gradientRadius="10"
+                        android:type="radial"
+                        android:angle="0"/>
+
+                    <padding
+                        android:bottom="3px"
+                        android:left="3px"
+                        android:right="3px"
+                        android:top="3px" />
+                </shape>
+            </item>
+            <item>
+                <bitmap android:src="@drawable/mul_deckview_bg"/>
+            </item>
+
+        </layer-list>
+    </item>
+    <!-- Blue button pressed -->
+    <item
+        android:right="15dp"
+        android:top="15dp"
+        android:left="15dp"
+        android:bottom="15dp">
+        <shape android:shape="oval">
+            <solid android:color="#78000000" />
+            <size android:width="150dp"
+                android:height="150dp"/>
+        </shape>
+    </item>
+</layer-list>

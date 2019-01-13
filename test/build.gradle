@@ -1,0 +1,130 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    def applicaitonID= "com.yumodev.test"
+    defaultConfig {
+        applicationId applicaitonID
+//        minSdkVersion 15
+//        targetSdkVersion 22
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 2
+        versionName "2.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        System.out.println("name::"+getApplicationName())
+//        System.out.println("release:"+getApkReleaseName())
+        System.out.println("name:"+getApkReleaseName())
+        System.out.println("name:"+getApplicationId())
+
+    }
+    signingConfigs {
+        system {
+            // 配置release版本的数字签名证书(为了方便，这里的release版本和debug版本共用一个数字签名证书)
+            storeFile file("../yumodev.jks")
+            storePassword "123456"
+            keyAlias "yumodev"
+            keyPassword "123456"
+        }
+        release {
+            // 配置release版本的数字签名证书(为了方便，这里的release版本和debug版本共用一个数字签名证书)
+            storeFile file("../keystore.jks")
+            storePassword "123456"
+            keyAlias "yumodev"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        debug{
+            if (project['isSystem'].equals("true")){
+                signingConfig signingConfigs.system
+                manifestPlaceholders.put("app_uid", "android.uid.system")
+            }else{
+                signingConfig signingConfigs.release
+                manifestPlaceholders.put("app_uid", applicaitonID)
+            }
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (project['isSystem'].equals("true")){
+                signingConfig signingConfigs.system
+                manifestPlaceholders.put("app_uid", "android.uid.system")
+            }else{
+                signingConfig signingConfigs.release
+                manifestPlaceholders.put("app_uid",applicaitonID)
+
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+  //  compile("com.github.yumodev:ym_android_demo_lib:$rootProject.ext.demo_lib_version"){
+    //    exclude group: 'com.android.support'
+//    }
+    compile "com.github.yumodev:ym_android_demo_lib:$rootProject.ext.demo_lib_version"
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile project(':library')
+    testCompile 'junit:junit:4.12'
+}
+
+build {
+    doLast {
+        println("begin doLast");
+    }
+}
+
+//afterEvaluate {
+//    tasks.getByName("assembleDebug").doLast {
+//        println 'test-debug.apk 到 ymdev/src/main/assets/目录下, 便于测试'
+//        copy {
+//            from(buildDir.absolutePath + '/outputs/apk/') {
+//                include project.name + '-' + 'debug' + '.apk'
+//            }
+//            def intoPath = "./..`/ymdev/src/main/assets/apk"
+//            println(intoPath)
+//            into(intoPath)
+//        }
+//    }
+//}
+
+afterEvaluate {
+    tasks.getByName("assembleDebug").doLast {
+        println getApkReleaseName()
+
+        //这个页可以，暂时用下面的方法
+        //file('build/outputs/aar m n/core-release.aar').renameTo(buildDir.absolutePath+"/outputs/aar/zls-release="+versionName+".aar")
+
+        copy {
+            from(buildDir.absolutePath + '/outputs/apk/debug') {
+                include project.name + '-' + 'debug' + '.apk'
+            }
+
+            def intoPath = buildDir.absolutePath+"/outputs/apk/debug"
+            println(intoPath)
+            into(intoPath)
+
+            rename('test-debug.apk', getApkReleaseName())
+        }
+    }
+}
+
+def getApkReleaseName() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("test-debug_")
+    sb.append(android.defaultConfig.versionName)
+    sb.append(".apk")
+    return sb.toString()
+}
+

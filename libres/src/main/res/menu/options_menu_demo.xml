@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res-atuo" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="setting"/>
+    <item
+        android:id="@+id/action_menu_one"
+        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="menu_one"/>
+    <item
+        android:id="@+id/action_menu_two"
+        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="menu_two"/>
+    <item
+        android:id="@+id/action_menu_three"
+        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="menu_three"/>
+    
+     <item
+        android:id="@+id/action_menu_four"
+        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="menu_sub_two"
+        >
+        <menu>
+	         <item
+	        android:id="@+id/action_sub_menu_one"
+	        android:icon="@drawable/ic_launcher"
+	        android:orderInCategory="100"
+	        android:showAsAction="never"
+	        android:title="menu_one"/>
+         
+	         <item
+	        android:id="@+id/action_sub_menu_two"
+	        android:icon="@drawable/ic_launcher"
+	        android:orderInCategory="100"
+	        android:showAsAction="never"
+	        android:title="two"/>
+        </menu>
+        </item>
+</menu>

@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="YmImageTextView">
+        <attr name="text" format="string" />
+        <attr name="text_margin" format="dimension" />
+        <attr name="text_color" format="color" />
+        <attr name="image_src" format="color|reference" />
+    </declare-styleable>
+</resources>

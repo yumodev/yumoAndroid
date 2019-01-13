@@ -1,0 +1,151 @@
+<resources>
+
+    <!-- common -->
+    <string name="common_add_success">添加成功</string>
+    <string name="common_add_failed">添加失败</string>
+    <string name="common_delete_success">删除成功</string>
+    <string name="common_delete_failed">删除失败</string>
+    <string name="common_search">搜索</string>
+    <string name="common_search_hint">请输入搜索内容</string>
+    <string name="common_empty">当前没有数据</string>
+
+    <!--test-->
+    <string name="list">列表</string>
+    <string name="search">搜索</string>
+
+
+
+    <string name="app_name">libres</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="android_exercise">安卓demo</string>
+
+
+
+    <string name="wifi_manager">WIFI管理</string>
+
+    <!-- map  -->
+    <string name="map">地图</string>
+    <string name="base_baidu_map">基本地图显示</string>
+    <string name="search_poi_baidu_map">地图搜索</string>
+    <string name="map_init_failed">百度地图初始化失败</string>
+    <string name="map_key_wrong">百度地图初始化时 key可能错误，请检查</string>
+    <string name="map_init_success">百度地图初始化成功</string>
+    <string name="map_key_right">百度地图Key认证成功</string>
+    <string name="map_network_data_wrong">请输入正确的检索条件</string>
+    <string name="map_search_result_zero">没有搜索到结果！请重新输入关键字进行搜索</string>
+    <string name="map_poi_first_page">已经是第一页了</string>
+    <string name="map_poi_last_page">已经是最后一页了</string>
+    <!-- <string name=""></string> -->
+
+
+    <!--  -->
+    <string name="no_network">当前没有开启网络</string>
+
+
+    <!-- 下拉刷新 -->
+    <string name="page_pull_to_refresh_pull_label">下拉加载第%1$d页</string>
+    <string name="page_pull_to_refresh_release_label">松开后加载第%1$d页</string>
+    <string name="page_pull_to_refresh_footer_release_label">松开后加载第%1$d页</string>
+    <string name="page_pull_to_refresh_footer_pull_label">上拉加载第%1$d页</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_label">松开后刷新</string>
+    <string name="pull_to_refresh_refreshing_label">刷新\u2026</string>
+    <string name="pull_to_refresh_footer_release_label">松开后加载</string>
+    <string name="pull_to_refresh_footer_pull_label">上拉加载更多</string>
+    <string name="pull_to_refresh_footer_refreshing_label">加载中\u2026</string>
+    <string name="title_activity_test_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+
+    <!--登录相关-->
+    <string name="prompt_user_name">UserName</string>
+    <string name="prompt_phone">Phone</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+
+    <!--网页相关-->
+    <string name="webview_open_url">当前标签打开</string>
+    <string name="webview_open_new_url">新标签打开</string>
+    <string name="webview_open_background_url">后台打开</string>
+    <string name="webview_copy_text">复制文本</string>
+    <string name="webview_copy_link">复制链接</string>
+    <string name="webview_image_download">下载图片</string>
+    <string name="webview_image_look">查看图片</string>
+    <string name="webview_image_share">分享图片</string>
+    <string name="webview_page_save">保存网页</string>
+    <string name="webview_page_share">分享网页</string>
+
+    <!--侧边栏-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yumo.android.common.widget.TouchEventFather xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical" >
+    
+    <include 
+        android:id="@+id/header"
+        layout="@layout/header_layout"/>
+    
+    <com.yumo.android.common.widget.TouchEventChild
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+	        <ListView 
+	        android:id="@+id/list"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:dividerHeight="20dp"
+	        android:divider="@color/page_bg"
+	        android:layout_below="@id/header">
+	    </ListView>
+    </com.yumo.android.common.widget.TouchEventChild>
+    
+
+</com.yumo.android.common.widget.TouchEventFather>

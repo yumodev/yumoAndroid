@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="test_list_perference_key">
+        <item>key_one</item>
+        <item>key_two</item>
+        <item>key_three</item>
+    </string-array>
+
+    <string-array name="test_list_perference_value">
+        <item>value_one</item>
+        <item>value_two</item>
+        <item>value_three</item>
+    </string-array>
+</resources>

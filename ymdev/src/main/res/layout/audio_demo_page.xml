@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <include 
+        android:id="@+id/header"
+        layout="@layout/header_layout"/>
+     
+      <LinearLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_margin="10dp">
+         
+          <Button android:id="@+id/btn_audio_system"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="系统播放音乐"
+             style="@style/text_common_middle"/>
+         
+     </LinearLayout>
+     
+     <LinearLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_margin="10dp">
+         
+          <Button android:id="@+id/begin_audio"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="开始播放"
+             style="@style/text_common_middle"/>
+          
+           <Button android:id="@+id/end_audio"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="暂停播放"
+             style="@style/text_common_middle"/>
+         
+     </LinearLayout>
+     
+     <LinearLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_margin="10dp">
+         
+          <Button android:id="@+id/begin_audio_service"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="开始服务"
+             style="@style/text_common_middle"/>
+          
+           <Button android:id="@+id/end_audio_service"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="停止服务"
+             style="@style/text_common_middle"/>
+           
+           </LinearLayout>
+     
+     
+     <LinearLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_margin="10dp">
+           
+         <SeekBar android:id="@+id/seekbar"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"/>
+       </LinearLayout>
+        
+     <LinearLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_margin="10dp">
+           
+           <Button android:id="@+id/pause_audio_service"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="开始"
+             style="@style/text_common_middle"/>
+           
+           <Button android:id="@+id/forward_audio_service"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="前进"
+             style="@style/text_common_middle"/>
+           
+              
+           <Button android:id="@+id/back_audio_service"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="后退"
+             style="@style/text_common_middle"/>
+           
+         
+     </LinearLayout>
+
+</LinearLayout>

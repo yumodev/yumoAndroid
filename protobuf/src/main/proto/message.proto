@@ -1,0 +1,30 @@
+message GpsForm {
+    required GpsDatas gpsDatas = 1;
+    required string sign = 2;
+}
+
+message GpsDatas {
+    repeated GpsData gpsList = 1;
+}   
+message GpsData {
+    /**设备号*/
+    required string outId = 1;
+    /**格林威治时间戳*/
+    required fixed64 timestamp = 2;
+    /**6位小数*100万纬度*/
+    required int32 latitude = 3;
+    /**6位小数*100万的经度*/
+    required int32 longitude = 4;
+    /**1位小数*10的km/h速度*/
+    optional uint32 speed = 5;
+    /**1位小数*10的0-360的方向，0为正北*/
+    optional uint32 bearing = 6;
+    /**水平gps精度*/
+    optional uint32 haccuracy = 7;
+    /**海拔高度，1位小数*10的整数，单位m*/
+    optional int32 altitude = 8;
+    /**垂直海拔精度*/
+    optional uint32 vaccuracy = 9;
+    /**卫星数*/
+    optional uint32 satellite = 10;
+}

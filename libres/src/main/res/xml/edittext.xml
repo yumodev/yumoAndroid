@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="editTextPreference">
+
+        <EditTextPreference
+            android:key="edittext_one"
+            android:title="edittext_title_one"
+            android:summary="edittext_one_summary"
+            android:defaultValue="inputtext"
+            android:dialogTitle="input dialog"/>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <include 
+        android:id="@+id/header"
+        layout="@layout/header_layout"/>
+     
+     <ScrollView
+		 android:id="@+id/fragment_id"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent">
+         
+         <LinearLayout  
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:orientation="vertical">
+             
+             <Button android:id="@+id/dialog_ok_cancel"
+                  android:layout_width="wrap_content"
+             	  android:layout_height="wrap_content"
+             	  android:layout_gravity="center_horizontal"
+             	  android:text="ok_cancel"/>
+             
+             <Button android:id="@+id/dialog_ok_cancel_third"
+                  android:layout_width="wrap_content"
+             	  android:layout_height="wrap_content"
+             	  android:layout_marginTop="10dp"
+             	  android:layout_gravity="center_horizontal"
+             	  android:text="third"/>
+             
+              <Button android:id="@+id/dialog_edit"
+                  android:layout_width="wrap_content"
+             	  android:layout_height="wrap_content"
+             	  android:layout_marginTop="10dp"
+             	  android:layout_gravity="center_horizontal"
+             	  android:text="dialog_edit"
+             	  android:onClick="onClick"/>
+              
+               <Button android:id="@+id/dialog_single_choice"
+                  android:layout_width="wrap_content"
+             	  android:layout_height="wrap_content"
+             	  android:layout_marginTop="10dp"
+             	  android:layout_gravity="center_horizontal"
+             	  android:text="dialog_single_choice"
+             	  android:onClick="onClick"/>
+               
+                <Button android:id="@+id/dialog_multi_choice"
+                  android:layout_width="wrap_content"
+             	  android:layout_height="wrap_content"
+             	  android:layout_marginTop="10dp"
+             	  android:layout_gravity="center_horizontal"
+             	  android:text="dialog_multi_choice"
+             	  android:onClick="onClick"/>
+                
+                 <Button android:id="@+id/dialog_list"
+                  android:layout_width="wrap_content"
+             	  android:layout_height="wrap_content"
+             	  android:layout_marginTop="10dp"
+             	  android:layout_gravity="center_horizontal"
+             	  android:text="dialog_list"
+             	  android:onClick="onClick"/>
+             
+             
+         </LinearLayout>
+         
+         
+     </ScrollView>
+
+</LinearLayout>
