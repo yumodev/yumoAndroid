@@ -292,6 +292,14 @@ public class YmPrefManager {
 		return result;
 	}
 
+	/**
+	 * 获取类型为boolean的值
+	 * @param key
+	 * @return
+	 */
+	public Boolean getValue(String key, boolean defaultValue) {
+		return getValue(null, key, defaultValue);
+	}
 
 	/**
 	 * 获取类型为boolean的值
@@ -375,14 +383,6 @@ public class YmPrefManager {
 		return result;
 	}
 
-	/**
-	 * 获取类型为boolean的值
-	 * @param key
-	 * @return
-	 */
-	public Boolean getValue(String key, boolean defaultValue) {
-		return getValue(null, key, defaultValue);
-	}
 
 	/**
 	 * 获取类型为int的值

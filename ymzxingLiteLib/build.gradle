@@ -25,6 +25,12 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
+
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
 }
 
 dependencies {
