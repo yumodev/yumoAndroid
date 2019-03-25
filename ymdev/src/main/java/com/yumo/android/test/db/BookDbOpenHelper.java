@@ -28,7 +28,6 @@ public class BookDbOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_BOOK_TABLE);
         db.execSQL(CREATE_USER_TABLE);
-
     }
 
     @Override

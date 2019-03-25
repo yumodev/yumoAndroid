@@ -1,63 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/common_page_bg">
 
-    <Button
-        android:id="@+id/btn_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="who is click"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <HorizontalScrollView
+        android:id="@+id/hor_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:padding="0dp"
+        android:layout_margin="0dp"
+        android:background="@drawable/layout1_bg">
 
         <RadioGroup
-            android:id="@+id/radiogroup_id"
-            android:layout_width="wrap_content"
+            android:id="@+id/hor_radiogroup_id"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/common_horizontal_margin"
-            android:dividerPadding="20dip"
             android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/common_horizontal_margin"
+            android:drawableTop="@drawable/tab_weixin"
+            android:drawablePadding="@dimen/common_spacing_small"
+            android:layout_weight="1"
+            android:button="@null"
+            android:textColor="@color/black"
+            android:text="radio1"
+            android:gravity="center"/>
+
+        <RadioButton
+            android:id="@+id/radio_2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/common_horizontal_margin"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_find_frd"
+            android:drawablePadding="@dimen/common_spacing_small"
+            android:textColor="@color/black"
+            android:text="radio2"
+            android:gravity="center"/>
+
+        <RadioButton
+            android:id="@+id/radio_3"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/common_horizontal_margin"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_settings"
+            android:drawablePadding="@dimen/common_spacing_small"
+            android:textColor="@color/black"
+            android:text="radio3"
+            android:gravity="center"/>
+
+        <RadioButton
+            android:id="@+id/radio_4"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/common_horizontal_margin"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_address"
+            android:drawablePadding="@dimen/common_spacing_small"
+            android:textColor="@color/black"
+            android:text="radio4"
+            android:gravity="center"/>
+
+        <RadioButton
+            android:id="@+id/radio_5"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_weixin"
+            android:drawablePadding="@dimen/common_spacing_small"
+            android:layout_marginRight="@dimen/common_horizontal_margin"
+            android:textColor="@color/black"
+            android:text="radio5"
+            android:gravity="center"/>
+
+        </RadioGroup>
+
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/ver_scroll"
+        android:layout_width="180dp"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@drawable/layout1_bg">
+
+        <RadioGroup
+            android:id="@+id/ver_radiogroup_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/common_horizontal_margin"
-                android:drawableTop="@drawable/selector_demo"
-                android:drawablePadding="@dimen/common_horizontal_margin"
+                android:id="@+id/radio_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/radio_button_height"
+                android:drawableLeft="@drawable/tab_weixin"
+                android:drawablePadding="@dimen/common_spacing_small"
                 android:layout_weight="1"
                 android:button="@null"
                 android:textColor="@color/black"
                 android:text="radio1"
-                android:gravity="center"/>
+                android:gravity="center_vertical"/>
 
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/common_horizontal_margin"
+                android:id="@+id/radio_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/radio_button_height"
                 android:layout_weight="1"
                 android:button="@null"
-                android:drawableTop="@drawable/selector_demo"
-                android:drawablePadding="@dimen/common_horizontal_margin"
+                android:drawableLeft="@drawable/tab_find_frd"
+                android:drawablePadding="@dimen/common_spacing_small"
                 android:textColor="@color/black"
                 android:text="radio2"
-                android:gravity="center"/>
+                android:gravity="center_vertical"/>
 
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/radio_3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/radio_button_height"
                 android:layout_weight="1"
                 android:button="@null"
-                android:drawableTop="@drawable/selector_demo"
-                android:drawablePadding="@dimen/common_horizontal_margin"
+                android:drawableLeft="@drawable/tab_settings"
+                android:drawablePadding="@dimen/common_spacing_small"
                 android:textColor="@color/black"
                 android:text="radio3"
-                android:gravity="center"/>
-        </RadioGroup>
-    </LinearLayout>
+                android:gravity="center_vertical"/>
 
-</LinearLayout>
+            <RadioButton
+                android:id="@+id/radio_4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/radio_button_height"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableLeft="@drawable/tab_address"
+                android:drawablePadding="@dimen/common_spacing_small"
+                android:textColor="@color/black"
+                android:text="radio4"
+                android:gravity="center_vertical"/>
+
+            <RadioButton
+                android:id="@+id/radio_5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/radio_button_height"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableLeft="@drawable/tab_weixin"
+                android:textColor="@color/black"
+                android:text="radio5"
+                android:gravity="center_vertical"/>
+
+        </RadioGroup>
+
+    </ScrollView>
+
+</merge>

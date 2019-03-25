@@ -5,13 +5,11 @@ import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.location.Location;
 import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
 import com.google.android.gms.location.Geofence;
-import com.yumo.common.android.YmIntentUtil;
 import com.yumo.common.android.YmLocationUtil;
 import com.yumo.common.log.Log;
 import com.yumodev.google.util.GeoFenceManager;
@@ -34,7 +32,7 @@ public class MyReceiver extends BroadcastReceiver {
     }
 
     private void createNotification(Context context, Intent intent) {
-        Log.i(Define.TAG_LOCATION, YmIntentUtil.toString(intent), false);
+        //Log.i(Define.TAG_LOCATION, YmIntentUtil.toString(intent), false);
 
         Location location = intent.getParcelableExtra("com.google.android.location.intent.extra.triggering_location");
         String message = YmLocationUtil.formatLocation(location);

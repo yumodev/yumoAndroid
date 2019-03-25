@@ -56,6 +56,25 @@ public class YmImageUtil {
 	}
 
 	/**
+	 * 根据颜色生成一张图片
+	 * @param color 颜色
+	 * @param radius 宽
+	 * @return
+	 */
+	public static Bitmap createCircleBitmapFromColor(int color, int radius) {
+		Bitmap bmp = Bitmap.createBitmap(radius*2, radius*2, Bitmap.Config.ARGB_8888);
+		Paint paint = new Paint();
+		paint.setAntiAlias(true);
+		paint.setColor(color);
+		paint.setStyle(Paint.Style.FILL);
+
+		Canvas canvas = new Canvas(bmp);
+		canvas.drawCircle(radius, radius, radius, paint);
+		//bmp.eraseColor(color);
+		return bmp;
+	}
+
+	/**
 	 * 将drawable转换成一张图片
 	 * @param drawable
 	 * @param width
@@ -312,5 +331,28 @@ public class YmImageUtil {
      */
 	public static Bitmap decodeResource(Context context, int resId) {
 		return BitmapFactory.decodeResource(context.getResources(), resId);
+	}
+
+
+	public static Bitmap transparentBitmap(Bitmap sourceImg, int number){
+		int[] argb = new int[sourceImg.getWidth() * sourceImg.getHeight()];
+
+		sourceImg.getPixels(argb, 0, sourceImg.getWidth(), 0, 0, sourceImg
+
+				.getWidth(), sourceImg.getHeight());// 获得图片的ARGB值
+
+		number = number * 255 / 100;
+
+		for (int i = 0; i < argb.length; i++) {
+
+			argb[i] = (number << 24) | (argb[i] & 0x00FFFFFF);
+
+		}
+
+		sourceImg = Bitmap.createBitmap(argb, sourceImg.getWidth(), sourceImg
+
+				.getHeight(), Bitmap.Config.ARGB_8888);
+
+		return sourceImg;
 	}
 }

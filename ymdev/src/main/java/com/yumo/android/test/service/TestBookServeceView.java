@@ -57,6 +57,26 @@ public class TestBookServeceView extends YmTestFragment {
                         e.printStackTrace();
                     }
 
+                    try {
+                        service.linkToDeath(new IBinder.DeathRecipient() {
+                            /**
+                             * 系统死亡的时候，得到通知。
+                             */
+                            @Override
+                            public void binderDied() {
+                                if (mBookManager == null){
+                                    return;
+                                }
+
+                                mBookManager.asBinder().unlinkToDeath(this, 0);
+                                mBookManager = null;
+
+                            }
+                        }, 0);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+
                 }
 
                 @Override

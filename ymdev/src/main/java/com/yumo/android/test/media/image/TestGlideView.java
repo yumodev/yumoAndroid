@@ -34,7 +34,8 @@ public class TestGlideView extends YmTestFragment {
 
     public void testView(){
         ImageView targetImageView = new ImageView(getContext());
-        String internetUrl = "http://i.imgur.com/DvpvklR.png";
+        //String internetUrl = "http://i.imgur.com/DvpvklR.png";
+        String internetUrl = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQG98DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyWlZZNzh0SURkSDQxel9wNTFzY2QAAgSHGYVcAwR4AAAA";
 
         Glide.with(getContext())
                 .load(internetUrl)

@@ -1,23 +1,15 @@
 package com.yumodev.process.background;
 
-import android.app.AlarmManager;
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.location.Location;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Debug;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.PowerManager;
-import android.os.SystemClock;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
@@ -26,7 +18,7 @@ import com.elvishew.xlog.XLog;
 import com.yumo.common.log.Log;
 import com.yumo.common.util.YmDateUtil;
 import com.yumodev.process.Define;
-import com.yumodev.process.local.RemoveForegroundService;
+import com.yumodev.process.MainActivity;
 import com.yumodev.process.util.LocationUtil;
 import com.yumodev.process.util.MediaClientService;
 
@@ -103,7 +95,7 @@ public class LocalService extends Service {
                     PowerManager.WakeLock wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "ZebraLocation");
                     wakeLock.acquire();
                     try {
-                        Thread.sleep(5000);
+                        Thread.sleep(30000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -117,6 +109,10 @@ public class LocalService extends Service {
                     if (location != null) locationStr = location.getAltitude() + " "+ location.getLatitude()+ location.toString();
                     //XLog.i(num+"  "+YmDateUtil.getStrTime()+" LocalService gps: "+locationStr);
                     wakeLock.release();
+
+//                    Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
+//                    intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    getApplicationContext().startActivity(intent1);
                 }
             }
         }).start();

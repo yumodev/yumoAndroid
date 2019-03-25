@@ -3,6 +3,7 @@ package com.yumo.android.test.activity.fragment;
 import android.util.Log;
 import android.view.ViewGroup;
 
+import com.yumo.android.test.view.layout1.Layout1Fragment;
 import com.yumo.demo.view.YmTestFragment;
 
 import java.util.ArrayList;
@@ -33,6 +34,10 @@ public class TestYmFragment extends YmTestFragment {
                 }
             }
         }
+    }
+
+    public void testLayout1Fragment(){
+        showFragment(new Layout1Fragment());
     }
 
 }

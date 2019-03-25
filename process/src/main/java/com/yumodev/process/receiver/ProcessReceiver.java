@@ -8,12 +8,10 @@ import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.BatteryManager;
-import android.widget.Toast;
 
-import com.elvishew.xlog.XLog;
 import com.yumo.common.android.YmAppUtil;
-import com.yumo.common.android.YmIntentUtil;
 import com.yumo.common.android.YmToastUtil;
+import com.yumo.common.io.ConvertObjectToString;
 import com.yumo.common.log.Log;
 import com.yumo.common.thread.YmProcessUtil;
 import com.yumodev.process.Define;
@@ -28,7 +26,7 @@ public class ProcessReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         StringBuilder sb = new StringBuilder();
-        sb.append(YmIntentUtil.toString(intent));
+        sb.append(ConvertObjectToString.toString(intent));
         Log.i(LOG_TAG, sb.toString(), true);
 
         switch (intent.getAction()){

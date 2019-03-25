@@ -1,20 +1,22 @@
-package com.yumo.common.android;
+package com.yumo.common.io;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.os.Parcelable;
+
+import com.yumo.common.log.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
 
-/**
- * Created by yumo on 2018/5/11.
- */
-
-public class YmIntentUtil {
+public class ConvertObjectToString {
 
     public static String toString(Intent intent){
+        if (intent == null){
+            return " intent is null ";
+        }
         StringBuilder sb = new StringBuilder();
         sb.append(intent.getAction()).append(" ");
 
@@ -39,6 +41,36 @@ public class YmIntentUtil {
                     }
 
                 }
+            }
+        }
+
+        return sb.toString();
+    }
+
+    public static String convertMessageToString(Message message){
+        if (message == null){
+            return " message is null ";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(message.toString()).append("\n");
+        if (message.getData() != null){
+            sb.append(convertObjectToString(message.getData()));
+        }
+        return sb.toString();
+    }
+
+    public static String convertObjectToString(Bundle bundle){
+        if (bundle == null){
+           return " bundle is null ";
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        for (String key: bundle.keySet()) {
+            sb.append("Key=").append( key ).append(", content=");
+            if (bundle.getString(key) != null){
+                sb.append(bundle.getString(key)).append("\n");
             }
         }
 

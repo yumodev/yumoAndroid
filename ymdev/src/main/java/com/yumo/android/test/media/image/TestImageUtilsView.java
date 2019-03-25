@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.media.ExifInterface;
 import android.util.Log;
 
+import com.yumo.android.test.media.custom.BlurView;
 import com.yumo.common.io.YmAdFileUtil;
 import com.yumo.common.util.YmSecureUtil;
 import com.yumo.common.media.YmImageUtil;
@@ -138,5 +139,9 @@ public class TestImageUtilsView extends YmTestFragment {
         return bigDecimal.floatValue();
     }
 
+
+    public void testShowBlueView(){
+        showTestView(new BlurView(getContext()));
+    }
 
 }

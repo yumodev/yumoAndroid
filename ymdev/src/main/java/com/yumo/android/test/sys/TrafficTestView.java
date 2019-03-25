@@ -286,7 +286,7 @@ public class TrafficTestView extends YmTestFragment{
         NetworkStatsManager networkStatsManager = (NetworkStatsManager) getContext().getSystemService(NETWORK_STATS_SERVICE);
 
         String result = "";
-        try {
+
             NetworkStats.Bucket bucket = new NetworkStats.Bucket();
             NetworkStats networkStats = networkStatsManager.queryDetailsForUid(ConnectivityManager.TYPE_WIFI, "", YmDateUtil.getTimesMonthMorning(), System.currentTimeMillis(), uid);
             StringBuilder sb = new StringBuilder();
@@ -304,9 +304,7 @@ public class TrafficTestView extends YmTestFragment{
 
 
             result = sb.toString();
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+
         return result;
     }
 

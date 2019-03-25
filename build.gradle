@@ -27,18 +27,26 @@ task clean(type: Delete) {
 
 ext{
     minSdkVersion = 14
-    targetSdkVersion = 27
-    compileSdkVersion = 27
+    targetSdkVersion = 28
+    compileSdkVersion = 28
     buildToolsVersion = '28.0.2'
     support_version = '26.1.0'
     demo_lib_version = '1.0.7'
     ym_utils_version = '0.1.2'
+    arch_version = '1.1.1'
     package_name = ''
 
-    support_v4 = 'com.android.support:support-v4:26.1.0'
-    appcompat_v7 = 'com.android.support:appcompat-v7:26.1.0'
-    support_design = 'com.android.support:design:26.1.0'
+    support_v4 = 'com.android.support:support-v4:28.1.0'
+    appcompat_v7 = 'com.android.support:appcompat-v7:28.1.0'
+    support_design = 'com.android.support:design:28.1.0'
     constraint_layout = "com.android.support.constraint:constraint-layout:1.0.2"
     ym_android_demo_lib = 'com.github.yumodev:ym_android_demo_lib:master-SNAPSHOT'
     ym_android_utils = 'com.github.yumodev:ym_android_utils:0.1.2'
+
+
+    room_runtime =  "android.arch.persistence.room:runtime:"+arch_version
+    lifecycle_runtime = "android.arch.lifecycle:runtime:"+arch_version
+    lifecycle_extensions = "android.arch.lifecycle:extensions:"+arch_version
+    lifecycle_compiler_annotation = "android.arch.lifecycle:compiler:"+arch_version
+    room_compiler_annotation =  "android.arch.persistence.room:compiler:"+arch_version
 }

@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:clipChildren="false"
     android:layout_height="60dp"
     android:orientation="horizontal" >
     
     <LinearLayout  
         android:id="@+id/tab_weixin"
         android:layout_width="0dp"
-        android:layout_height="fill_parent"
+        android:layout_height="60dp"
         android:gravity="center"
         android:layout_weight="1"
+        android:clipChildren="false"
         android:orientation="vertical">
         
         <ImageView 
             android:id = "@+id/tab_weixin_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/tab_weixin_pressed">
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/tab_weixin_normal">
             
         </ImageView>
         

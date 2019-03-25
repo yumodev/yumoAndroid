@@ -30,5 +30,12 @@ dependencies {
     compile "com.android.support:appcompat-v7:$rootProject.ext.support_version"
     compile "com.android.support:design:$rootProject.ext.support_version"
     compile "com.android.support:support-v4:$rootProject.ext.support_version"
+//    implementation rootProject.ext.room_runtime
+//    implementation rootProject.ext.lifecycle_runtime
+//    implementation rootProject.ext.lifecycle_extensions
+//    annotationProcessor rootProject.ext.lifecycle_compiler_annotation
+//    annotationProcessor rootProject.ext.room_compiler_annotation
+
+
     testImplementation 'junit:junit:4.12'
 }

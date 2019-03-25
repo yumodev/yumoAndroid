@@ -30,4 +30,8 @@
     <dimen name="drag_item_ver_space">16dp</dimen>
     <dimen name="drag_item_top_margin">16dp</dimen>
     <dimen name="drag_item_bottom_margin">16dp</dimen>
+
+
+    <!--layout1-->
+    <dimen name="radio_button_height">80dp</dimen>
 </resources>

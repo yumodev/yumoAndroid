@@ -15,4 +15,11 @@ public class TestBase extends TestCase {
         boolean c = a == b;
         assertTrue(c);
     }
+
+
+    public void testCeil(){
+        System.out.println("11.1 : "+Math.ceil(11.1f));
+        System.out.println("11.1 : "+(int)Math.ceil(11.1f));
+
+    }
 }

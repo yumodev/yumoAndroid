@@ -9,6 +9,7 @@ import com.yumo.demo.view.YmTestFragment;
 
 /**
  * Created by yumodev on 10/9/16.
+ * 测试Provider的使用。
  */
 
 public class TestProviderFragment extends YmTestFragment {

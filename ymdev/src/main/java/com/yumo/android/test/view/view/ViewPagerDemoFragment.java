@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.yumo.android.R;
 import com.yumo.android.test.activity.fragment.FragmentDemo;
+import com.yumo.ui.viewpager.YmViewPager;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -60,7 +61,7 @@ public class ViewPagerDemoFragment extends Fragment {
 
     private String[] mTypePagers = {TYPE_PAGER_ADAPTER, TYPE_FRAGMENT_ADAPTER, TYPE_PAGER_ADAPTER_WEIXIN, TYPE_PAGER_ANIMATION};
 
-    private android.support.v4.view.ViewPager mViewPager = null;
+    private YmViewPager mViewPager = null;
     private Spinner mSpinner = null;
     private android.support.v4.view.PagerTabStrip mTabStrip = null;
     private LinearLayout mBottomLinear = null;
@@ -103,7 +104,8 @@ public class ViewPagerDemoFragment extends Fragment {
      */
     private boolean initView() {
 
-        mViewPager = (android.support.v4.view.ViewPager) getView().findViewById(R.id.viewpager);
+        mViewPager = getView().findViewById(R.id.viewpager);
+        mViewPager.setCanScroll(false);
         mTabStrip = (android.support.v4.view.PagerTabStrip) getView().findViewById(R.id.tabstrip);
         mBottomLinear = (LinearLayout) getView().findViewById(R.id.bottom);
 

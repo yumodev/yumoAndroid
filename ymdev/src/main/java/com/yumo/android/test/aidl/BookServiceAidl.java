@@ -1,14 +1,19 @@
 package com.yumo.android.test.aidl;
 
-import android.app.Service;
+
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Binder;
+import android.os.Build;
 import android.os.IBinder;
+import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.yumo.android.common.base.BaseService;
 
 import java.util.Iterator;
 import java.util.List;
@@ -21,13 +26,17 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * 用户测试的远程book类
  */
 
-public class BookServiceAidl extends Service {
+public class BookServiceAidl extends BaseService {
     private final String LOG_TAG = BookServiceAidl.class.getSimpleName();
 
-    private CopyOnWriteArrayList<IBookCallbackListener> mBookCallbackListener = new CopyOnWriteArrayList<>();
+    private RemoteCallbackList<IBookCallbackListener> mListenerList = new RemoteCallbackList<>();
+    /**
+     * 支持并发读写。
+     */
     private CopyOnWriteArrayList<Book> mBookList = new CopyOnWriteArrayList<>();
 
     private AtomicBoolean mIsDestroy = new AtomicBoolean(false);
+
     private Binder mBinder = new IBookManager.Stub(){
         @Override
         public List<Book> getBookList() throws RemoteException {
@@ -44,15 +53,21 @@ public class BookServiceAidl extends Service {
         @Override
         public void registerListener(IBookCallbackListener listener) throws RemoteException {
             Log.i(LOG_TAG, "registerListener");
-            mBookCallbackListener.add(listener);
+           mListenerList.register(listener);
         }
 
+        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
         @Override
         public void unRegisterListener(IBookCallbackListener listener) throws RemoteException {
-            mBookCallbackListener.remove(listener);
-            Log.i(LOG_TAG, "unRegisterListener:"+mBookCallbackListener.size());
+           mListenerList.unregister(listener);
+            Log.i(LOG_TAG, "unRegisterListener:"+mListenerList.getRegisteredCallbackCount());
         }
     };
+
+    @Override
+    protected String getTag() {
+        return LOG_TAG;
+    }
 
     @Override
     public void onCreate() {
@@ -90,6 +105,7 @@ public class BookServiceAidl extends Service {
 
     private void bookThread(){
         new Thread(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
             @Override
             public void run() {
                 while (mIsDestroy.get()){
@@ -104,14 +120,15 @@ public class BookServiceAidl extends Service {
         }).start();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void addNewBook(){
         Random random = new Random();
         Book book = new Book(random.nextInt(), "bookName:"+random.nextInt());
         mBookList.add(book);
-        Log.i(LOG_TAG, "addNewBook:"+(new Gson()).toJson(book)+" "+mBookCallbackListener.size());
-        Iterator iterator = mBookCallbackListener.iterator();
-        while (iterator.hasNext()){
-            IBookCallbackListener listener = (IBookCallbackListener) iterator.next();
+        int listenNum = mListenerList.getRegisteredCallbackCount();
+        Log.i(LOG_TAG, "addNewBook:"+(new Gson()).toJson(book)+" "+listenNum);
+        for (int i = 0 ; i < listenNum; i++){
+            IBookCallbackListener listener = mListenerList.getBroadcastItem(i);
             Log.i(LOG_TAG, "onNewBookArrived:");
             try {
                 listener.onNewBookArrived(book);

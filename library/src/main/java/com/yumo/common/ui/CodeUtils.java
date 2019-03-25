@@ -7,8 +7,6 @@ import android.graphics.Paint;
 
 import java.util.Random;
 
-
-
 import android.graphics.Bitmap.Config;
 
 /**
@@ -75,7 +73,7 @@ public class CodeUtils {
             drawLine(canvas, paint);
         }
 
-        canvas.save(Canvas.ALL_SAVE_FLAG);//保存
+        canvas.save();//保存
         canvas.restore();
         return bitmap;
     }
