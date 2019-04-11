@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         YmAppUtil.hookWebView();
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP){
             WebView.enableSlowWholeDocumentDraw();

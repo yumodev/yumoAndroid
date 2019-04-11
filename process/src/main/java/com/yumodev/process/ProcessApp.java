@@ -22,7 +22,7 @@ import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.analytics.MobclickAgent;
 import com.yumo.common.android.YmContext;
 import com.yumo.common.thread.YmProcessUtil;
-import com.yumo.demo.utils.YmDemoUtil;
+import com.yumo.demo.utils.YmUIDemoManager;
 import com.yumodev.process.background.YmActivityLifecycleCallbacks;
 import com.yumodev.process.receiver.ProcessReceiver;
 import com.yumodev.process.util.UmengAnalytics;
@@ -38,7 +38,7 @@ public class ProcessApp extends Application {
     public void onCreate() {
         //Crasheye.init(this, "c0132ee0");
         super.onCreate();
-        YmDemoUtil.setAppPackageName("com.yumodev.process");
+        YmUIDemoManager.getInstance().setAppPackageName("com.yumodev.process");
         YmContext.setAppContext(this);
 
 

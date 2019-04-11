@@ -1,1 +1,1 @@
-include ':ymdev', ':library', ':ym_java', ':ymthirdlib', ':ymui', ':test', ':ymdev1', ':libres', ':ymweb', ':ymzxingLiteLib', ':protobuf', ':xglib', ':processlib', ':process', ':google'
+include ':ymdev', ':library', ':ym_java', ':ymthirdlib', ':ymui', ':test', ':ymdev1', ':libres', ':ymweb', ':ymzxingLiteLib', ':protobuf', ':xglib', ':processlib', ':process'

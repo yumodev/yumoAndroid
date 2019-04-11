@@ -40,7 +40,7 @@ ext{
     appcompat_v7 = 'com.android.support:appcompat-v7:28.1.0'
     support_design = 'com.android.support:design:28.1.0'
     constraint_layout = "com.android.support.constraint:constraint-layout:1.0.2"
-    ym_android_demo_lib = 'com.github.yumodev:ym_android_demo_lib:master-SNAPSHOT'
+    ym_android_demo_lib = 'com.github.yumodev:ym_android_demo_lib:1.1.0'
     ym_android_utils = 'com.github.yumodev:ym_android_utils:0.1.2'
 
 

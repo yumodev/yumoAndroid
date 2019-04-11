@@ -88,7 +88,7 @@ dependencies {
     compile 'com.elvishew:xlog:1.4.0'
 
 
-    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.umeng.analytics:analytics:6.1.4'
 
 
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
