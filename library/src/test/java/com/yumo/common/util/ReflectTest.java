@@ -3,6 +3,9 @@ package com.yumo.common.util;
 
 import junit.framework.TestCase;
 
+/**
+ * 测试Reflect的使用
+ */
 public class ReflectTest extends TestCase {
 
     public void testInstance(){

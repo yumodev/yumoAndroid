@@ -1,0 +1,33 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="common_horizontal_margin">16dp</dimen>
+    <dimen name="common_vertical_margin">16dp</dimen>
+    <dimen name="common_vertical_margin_small">8dp</dimen>
+    <dimen name="common_spacing_small">4dp</dimen>
+    <dimen name="common_spacing_normal">8dp</dimen>
+    <dimen name="common_spacing_big">16dp</dimen>
+    <dimen name="common_text_size_large">18sp</dimen>
+    <dimen name="common_text_size_normal">16sp</dimen>
+    <dimen name="common_text_size_small">14sp</dimen>
+
+    <dimen name="common_cornor">8dp</dimen>
+    <dimen name="common_space">8dp</dimen>
+    <dimen name="common_icon_height">24dp</dimen>
+
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="dimen_40">40dp</dimen>
+
+
+    <!--DragMerge-->
+    <dimen name="drag_icon_margin">5dp</dimen>
+    <dimen name="drag_item_hor_margin">16dp</dimen>
+    <dimen name="drag_item_hor_space">16dp</dimen>
+    <dimen name="drag_item_ver_space">16dp</dimen>
+    <dimen name="drag_item_top_margin">16dp</dimen>
+    <dimen name="drag_item_bottom_margin">16dp</dimen>
+
+
+</resources>

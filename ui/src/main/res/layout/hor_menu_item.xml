@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yumodev.ui.recyclerview.hormenu.ItemHorMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/common_app_page">
+
+    <LinearLayout
+        android:id="@+id/swipe_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right">
+
+        <Button
+            android:id="@+id/menu_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/swipe_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18sp">
+        </TextView>
+
+    </LinearLayout>
+</com.yumodev.ui.recyclerview.hormenu.ItemHorMenuLayout>
