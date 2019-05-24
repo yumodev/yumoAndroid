@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
-import android.support.annotation.MenuRes;
+import androidx.annotation.MenuRes;
 import android.util.AttributeSet;
 import android.util.Xml;
 import android.view.InflateException;

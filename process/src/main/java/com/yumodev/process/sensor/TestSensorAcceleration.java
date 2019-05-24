@@ -6,7 +6,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
@@ -17,7 +17,6 @@ import com.yumo.common.io.YmAdFileUtil;
 import com.yumo.common.io.YmFileUtil;
 import com.yumo.common.io.YmSdUtil;
 import com.yumo.common.log.Log;
-import com.yumo.common.util.YmDateUtil;
 import com.yumo.demo.view.YmTestFragment;
 
 import java.io.File;

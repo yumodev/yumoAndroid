@@ -2,11 +2,10 @@ package com.yumo.android.test.media.canvas.test;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v7.widget.LinearLayoutCompat;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Space;
 
 import com.yumo.android.R;
 import com.yumo.common.android.YmResUtil;

@@ -1,6 +1,6 @@
 package com.yumodev.ui.recyclerview.DragRecyclerView;
 
-import android.support.v7.widget.helper.ItemTouchHelper;
+import androidx.recyclerview.widget.ItemTouchHelper;
 
 /**
  * Created by yumodev on 17/4/17.

@@ -1,7 +1,7 @@
 package com.yumo.ui.fragment;
 
-import android.support.annotation.StringRes;
-import android.support.v4.app.DialogFragment;
+import androidx.annotation.StringRes;
+import androidx.fragment.app.DialogFragment;
 import android.widget.Toast;
 
 /**

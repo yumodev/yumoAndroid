@@ -6,11 +6,10 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.yumo.common.log.Log;
 import com.yumodev.process.Define;
-import com.yumodev.process.R;
 
 /**
  * Created by yumodev on 18/3/22.

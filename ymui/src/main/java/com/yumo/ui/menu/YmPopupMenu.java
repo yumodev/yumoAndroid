@@ -1,7 +1,7 @@
 package com.yumo.ui.menu;
 
 import android.content.Context;
-import android.support.annotation.MenuRes;
+import androidx.annotation.MenuRes;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;

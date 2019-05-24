@@ -2,9 +2,9 @@ package com.yumodev.ui.view.drag.draggrid
 
 import android.content.ClipData
 import android.content.Context
-import android.support.v4.view.GestureDetectorCompat
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.core.view.GestureDetectorCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.*
 import android.widget.FrameLayout
@@ -30,7 +30,7 @@ class DragGridView(context : Context) : FrameLayout(context) {
     private val LOG_TAG = Define.LOG_TAG+"GridDragView"
 
     private var mDataList: MutableList<DragItemBean>? = null
-    private lateinit var  mListView: RecyclerView
+    private lateinit var  mListView: androidx.recyclerview.widget.RecyclerView
     private lateinit var mAdapter: ItemAdapter
     private lateinit var mItemSpaceDecoration: GridSpaceItemDecoration
     private lateinit var mGestureDetectorCompat : GestureDetectorCompat
@@ -54,8 +54,8 @@ class DragGridView(context : Context) : FrameLayout(context) {
         initDragSettings()
         updateDragSize()
         initTestData()
-        mListView = RecyclerView(context)
-        mListView.layoutManager = GridLayoutManager(context, DragManager.getInstance().column)
+        mListView = androidx.recyclerview.widget.RecyclerView(context)
+        mListView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(context, DragManager.getInstance().column)
 
         mItemSpaceDecoration = GridSpaceItemDecoration(DragManager.getInstance().itemHorSpace, DragManager.getInstance().column)
         mItemSpaceDecoration.setHorMargin(DragManager.getInstance().itemHorMargin)
@@ -156,8 +156,13 @@ class DragGridView(context : Context) : FrameLayout(context) {
                 }
         )
 
-        mListView.addOnItemTouchListener(object : RecyclerView.OnItemTouchListener{
-            override fun onTouchEvent(rv: RecyclerView?, e: MotionEvent?) {
+
+        mListView.addOnItemTouchListener(object : androidx.recyclerview.widget.RecyclerView.OnItemTouchListener{
+//            override fun onInterceptTouchEvent(p0: RecyclerView, e: MotionEvent): Boolean {
+//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//            }
+
+            override fun onTouchEvent(p0: androidx.recyclerview.widget.RecyclerView, e: MotionEvent) {
                 Log.i(LOG_TAG, "onTouchEvent:"+e?.actionMasked)
                 mGestureDetectorCompat.onTouchEvent(e)
                 when(e!!.actionMasked){
@@ -174,7 +179,7 @@ class DragGridView(context : Context) : FrameLayout(context) {
                 }
             }
 
-            override fun onInterceptTouchEvent(rv: RecyclerView?, e: MotionEvent?): Boolean {
+            override fun onInterceptTouchEvent(rv: androidx.recyclerview.widget.RecyclerView, e: MotionEvent): Boolean {
                 mGestureDetectorCompat.onTouchEvent(e)
                 Log.i(LOG_TAG, "onInterceptTouchEvent:"+e?.actionMasked)
                 return true
@@ -225,7 +230,7 @@ class DragGridView(context : Context) : FrameLayout(context) {
 
     }
 
-    private inner class ItemAdapter(context: Context) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(), ItemTouchHelperAdapter {
+    private inner class ItemAdapter(context: Context) : androidx.recyclerview.widget.RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(), ItemTouchHelperAdapter {
         private val mInflater: LayoutInflater = LayoutInflater.from(context)
 
         override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ItemViewHolder {
@@ -257,14 +262,14 @@ class DragGridView(context : Context) : FrameLayout(context) {
 
         }
 
-        internal inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        internal inner class ItemViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
             var mTextView: TextView
             var mIconView: ImageView
 
             init {
                 mTextView = itemView.findViewById<View>(R.id.drag_title_id) as TextView
                 mIconView = itemView.findViewById<View>(R.id.drag_item_icon) as ImageView
-                val lp = itemView.layoutParams as GridLayoutManager.LayoutParams
+                val lp = itemView.layoutParams as androidx.recyclerview.widget.GridLayoutManager.LayoutParams
                 lp.height = DragManager.getInstance().itemHeight
                 itemView.layoutParams = lp
 

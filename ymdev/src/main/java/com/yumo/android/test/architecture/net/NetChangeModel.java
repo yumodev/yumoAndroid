@@ -1,8 +1,8 @@
 package com.yumo.android.test.architecture.net;
 
-import android.arch.lifecycle.LifecycleOwner;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 import android.content.res.Configuration;
 
 import com.yumo.common.net.YmNetManager;

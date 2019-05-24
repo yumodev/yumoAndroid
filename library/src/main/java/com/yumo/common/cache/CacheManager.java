@@ -2,7 +2,7 @@ package com.yumo.common.cache;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v4.util.LruCache;
+import androidx.collection.LruCache;
 
 import com.yumo.common.android.YmAppUtil;
 import com.yumo.common.io.YmAdFileUtil;

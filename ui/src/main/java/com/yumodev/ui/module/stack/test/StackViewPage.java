@@ -2,18 +2,15 @@ package com.yumodev.ui.module.stack.test;
 
 import android.content.Context;
 import android.database.DataSetObserver;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.StackView;
-import android.widget.TextView;
 
 import com.yumodev.ui.R;
-import com.yumodev.ui.module.stack.StackChildView;
 import com.yumodev.ui.module.stack.StackEntry;
 
 import java.util.ArrayList;

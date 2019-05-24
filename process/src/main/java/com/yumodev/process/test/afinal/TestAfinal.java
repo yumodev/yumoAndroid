@@ -1,7 +1,7 @@
 package com.yumodev.process.test.afinal;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.yumo.common.log.Log;
 import com.yumo.demo.view.YmTestFragment;

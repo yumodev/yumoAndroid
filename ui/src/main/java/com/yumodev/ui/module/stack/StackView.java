@@ -1,9 +1,9 @@
 package com.yumodev.ui.module.stack;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.ViewUtils;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.ViewUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -14,12 +14,11 @@ import android.widget.FrameLayout;
 import android.widget.OverScroller;
 
 import com.yumodev.ui.recyclerview.Define;
-import com.yumodev.ui.util.YmViewUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.support.v4.widget.ViewDragHelper.INVALID_POINTER;
+import static androidx.customview.widget.ViewDragHelper.INVALID_POINTER;
 
 /**
  * Created by yumodev on 18/1/10.

@@ -1,13 +1,11 @@
 package com.yumodev.test;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.yumo.demo.config.Config;
 import com.yumo.demo.view.YmTestClassFragment;
-import com.yumodev.test.service.TestService;
 
 public class MainActivity extends AppCompatActivity {
 

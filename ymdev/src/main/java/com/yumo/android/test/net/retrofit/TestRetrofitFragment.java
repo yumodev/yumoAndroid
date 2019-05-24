@@ -1,7 +1,7 @@
 package com.yumo.android.test.net.retrofit;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.yumo.android.test.net.leancloud.LeanCloudDefine;

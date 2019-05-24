@@ -18,8 +18,8 @@ package com.yumo.android.test.view.recyclerview.touchhelper;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v7.widget.RecyclerView;
+import androidx.core.view.MotionEventCompat;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -36,7 +36,7 @@ import java.util.List;
 
 /**
  * Simple RecyclerView.Adapter that implements {@link ItemTouchHelperAdapter} to respond to move and
- * dismiss events from a {@link android.support.v7.widget.helper.ItemTouchHelper}.
+ * dismiss events from a {@link androidx.recyclerview.widget.ItemTouchHelper}.
  *
  * @author Paul Burke (ipaulpro)
  */

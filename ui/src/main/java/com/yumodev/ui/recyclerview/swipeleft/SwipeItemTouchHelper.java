@@ -25,12 +25,12 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.v4.view.GestureDetectorCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchUIUtil;
+import androidx.annotation.Nullable;
+import androidx.core.view.GestureDetectorCompat;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchUIUtil;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.HapticFeedbackConstants;
@@ -43,6 +43,8 @@ import android.view.ViewParent;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 
+import com.yumodev.ui.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,18 +56,18 @@ import java.util.List;
  * are enabled and also receives events when user performs these actions.
  * <p>
  * Depending on which functionality you support, you should override
- * {@link android.support.v7.widget.helper.ItemTouchHelper.Callback#onMove(RecyclerView, RecyclerView.ViewHolder, RecyclerView.ViewHolder)} and / or
- * {@link android.support.v7.widget.helper.ItemTouchHelper.Callback#onSwiped(RecyclerView.ViewHolder, int)}.
+ * {@link androidx.recyclerview.widget.ItemTouchHelper.Callback#onMove(RecyclerView, RecyclerView.ViewHolder, RecyclerView.ViewHolder)} and / or
+ * {@link androidx.recyclerview.widget.ItemTouchHelper.Callback#onSwiped(RecyclerView.ViewHolder, int)}.
  * <p>
  * This class is designed to work with any LayoutManager but for certain situations, it can be
  * optimized for your custom LayoutManager by extending methods in the
- * {@link android.support.v7.widget.helper.ItemTouchHelper.Callback} class or implementing {@link android.support.v7.widget.helper.ItemTouchHelper.ViewDropHandler}
+ * {@link androidx.recyclerview.widget.ItemTouchHelper.Callback} class or implementing {@link androidx.recyclerview.widget.ItemTouchHelper.ViewDropHandler}
  * interface in your LayoutManager.
  * <p>
  * By default, ItemTouchHelper moves the items' translateX/Y properties to reposition them. You can
- * customize these behaviors by overriding {@link android.support.v7.widget.helper.ItemTouchHelper.Callback#onChildDraw(Canvas, RecyclerView,
+ * customize these behaviors by overriding {@link androidx.recyclerview.widget.ItemTouchHelper.Callback#onChildDraw(Canvas, RecyclerView,
  * RecyclerView.ViewHolder, float, float, int, boolean)}
- * or {@link android.support.v7.widget.helper.ItemTouchHelper.Callback#onChildDrawOver(Canvas, RecyclerView, RecyclerView.ViewHolder, float, float, int,
+ * or {@link androidx.recyclerview.widget.ItemTouchHelper.Callback#onChildDrawOver(Canvas, RecyclerView, RecyclerView.ViewHolder, float, float, int,
  * boolean)}.
  * <p/>
  * Most of the time you only need to override <code>onChildDraw</code>.
@@ -464,9 +466,9 @@ public class SwipeItemTouchHelper extends RecyclerView.ItemDecoration
         if (mRecyclerView != null) {
             final Resources resources = recyclerView.getResources();
             mSwipeEscapeVelocity = resources
-                    .getDimension(android.support.v7.recyclerview.R.dimen.item_touch_helper_swipe_escape_velocity);
+                    .getDimension(R.dimen.item_touch_helper_swipe_escape_velocity);
             mMaxSwipeVelocity = resources
-                    .getDimension(android.support.v7.recyclerview.R.dimen.item_touch_helper_swipe_escape_max_velocity);
+                    .getDimension(R.dimen.item_touch_helper_swipe_escape_max_velocity);
             setupCallbacks();
         }
     }
@@ -1309,12 +1311,12 @@ public class SwipeItemTouchHelper extends RecyclerView.ItemDecoration
 
     /**
      * An interface which can be implemented by LayoutManager for better integration with
-     * {@link android.support.v7.widget.helper.ItemTouchHelper}.
+     * {@link androidx.recyclerview.widget.ItemTouchHelper}.
      */
     public interface ViewDropHandler {
 
         /**
-         * Called by the {@link android.support.v7.widget.helper.ItemTouchHelper} after a View is dropped over another View.
+         * Called by the {@link androidx.recyclerview.widget.ItemTouchHelper} after a View is dropped over another View.
          * <p>
          * A LayoutManager should implement this interface to get ready for the upcoming move
          * operation.
@@ -1528,7 +1530,7 @@ public class SwipeItemTouchHelper extends RecyclerView.ItemDecoration
          * This flag is composed of 3 sets of 8 bits, where first 8 bits are for IDLE state, next
          * 8 bits are for SWIPE state and third 8 bits are for DRAG state.
          * Each 8 bit sections can be constructed by simply OR'ing direction flags defined in
-         * {@link android.support.v7.widget.helper.ItemTouchHelper}.
+         * {@link androidx.recyclerview.widget.ItemTouchHelper}.
          * <p>
          * For example, if you want it to allow swiping LEFT and RIGHT but only allow starting to
          * swipe by swiping RIGHT, you can return:
@@ -1881,9 +1883,9 @@ public class SwipeItemTouchHelper extends RecyclerView.ItemDecoration
          *
          * @param viewHolder  The new ViewHolder that is being swiped or dragged. Might be null if
          *                    it is cleared.
-         * @param actionState One of {@link android.support.v7.widget.helper.ItemTouchHelper#ACTION_STATE_IDLE},
-         *                    {@link android.support.v7.widget.helper.ItemTouchHelper#ACTION_STATE_SWIPE} or
-         *                    {@link android.support.v7.widget.helper.ItemTouchHelper#ACTION_STATE_DRAG}.
+         * @param actionState One of {@link androidx.recyclerview.widget.ItemTouchHelper#ACTION_STATE_IDLE},
+         *                    {@link androidx.recyclerview.widget.ItemTouchHelper#ACTION_STATE_SWIPE} or
+         *                    {@link androidx.recyclerview.widget.ItemTouchHelper#ACTION_STATE_DRAG}.
          * @see #clearView(RecyclerView, RecyclerView.ViewHolder)
          */
         public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState) {
@@ -1895,7 +1897,7 @@ public class SwipeItemTouchHelper extends RecyclerView.ItemDecoration
         private int getMaxDragScroll(RecyclerView recyclerView) {
             if (mCachedMaxScrollSpeed == -1) {
                 mCachedMaxScrollSpeed = recyclerView.getResources().getDimensionPixelSize(
-                        android.support.v7.recyclerview.R.dimen.item_touch_helper_max_drag_scroll_per_frame);
+                        R.dimen.item_touch_helper_max_drag_scroll_per_frame);
             }
             return mCachedMaxScrollSpeed;
         }

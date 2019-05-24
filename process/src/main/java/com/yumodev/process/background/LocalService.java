@@ -1,7 +1,6 @@
 package com.yumodev.process.background;
 
 import android.app.Service;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -11,14 +10,13 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.PowerManager;
 import android.os.Vibrator;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.Toast;
 
 import com.elvishew.xlog.XLog;
 import com.yumo.common.log.Log;
 import com.yumo.common.util.YmDateUtil;
 import com.yumodev.process.Define;
-import com.yumodev.process.MainActivity;
 import com.yumodev.process.util.LocationUtil;
 import com.yumodev.process.util.MediaClientService;
 

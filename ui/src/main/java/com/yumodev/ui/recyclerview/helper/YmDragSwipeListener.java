@@ -1,7 +1,7 @@
 package com.yumodev.ui.recyclerview.helper;
 
 import android.graphics.Canvas;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by yumodev on 18/1/26.

@@ -1,9 +1,6 @@
 package com.yumo.ui.menu;
 
-import android.support.annotation.StringRes;
-import android.view.MenuItem;
-
-import java.util.List;
+import androidx.annotation.StringRes;
 
 /**
  * Created by yumodev on 17/11/25.

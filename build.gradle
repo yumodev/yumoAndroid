@@ -1,12 +1,12 @@
 buildscript {
-    ext.kotlin_version = '1.2.51'
+    ext.kotlin_version = '1.3.0'
     repositories {
         google()
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.android.tools.build:gradle:3.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.6'
     }
@@ -30,23 +30,62 @@ ext{
     targetSdkVersion = 28
     compileSdkVersion = 28
     buildToolsVersion = '28.0.2'
-    support_version = '28.0.0'
+    support_version = '1.0.0-beta01'
     demo_lib_version = '1.0.7'
     ym_utils_version = '0.1.2'
-    arch_version = '1.1.1'
+    arch_version = '2.0.0-beta01'
     package_name = ''
 
-    support_v4 = 'com.android.support:support-v4:'+support_version
-    appcompat_v7 = 'com.android.support:appcompat-v7:'+support_version
-    support_design = 'com.android.support:design:'+support_version
-    constraint_layout = "com.android.support.constraint:constraint-layout:1.0.2"
+    kotlin_jre = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:"+kotlin_version
+
+    appcompat = "androidx.appcompat:appcompat:"+support_version
+    material = "com.google.android.material:material:"+support_version
+    legacy =  "androidx.legacy:legacy-support-v4:$rootProject.ext.support_version"
+    constraint_layout = 'androidx.constraintlayout:constraintlayout:1.1.2'
+    annotation = 'androidx.annotation:annotation:'+support_version
+    multidex = 'androidx.multidex:multidex:2.0.0'
     ym_android_demo_lib = 'com.github.yumodev:ym_android_demo_lib:1.1.0'
     ym_android_utils = 'com.github.yumodev:ym_android_utils:0.1.2'
 
 
-    room_runtime =  "android.arch.persistence.room:runtime:"+arch_version
-    lifecycle_runtime = "android.arch.lifecycle:runtime:"+arch_version
-    lifecycle_extensions = "android.arch.lifecycle:extensions:"+arch_version
-    lifecycle_compiler_annotation = "android.arch.lifecycle:compiler:"+arch_version
-    room_compiler_annotation =  "android.arch.persistence.room:compiler:"+arch_version
+    room_runtime =  "androidx.room:room-runtime:"+arch_version
+    lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime:"+arch_version
+    lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:"+arch_version
+    lifecycle_compiler = "androidx.lifecycle:lifecycle-compiler:"+arch_version
+    room_compiler =  "androidx.room:room-compiler:"+arch_version
+
+
+    gson = 'com.google.code.gson:gson:2.6.1'
+    stetho = 'com.facebook.stetho:stetho:1.5.0'
+    debug_db = 'com.amitshekhar.android:debug-db:1.0.1'
+    flurry = 'com.flurry.android:analytics:7.2.3@aar'
+    gaode_location = 'com.amap.api:location:4.5.1'
+    gaode_map2d = 'com.amap.api:map2d:5.2.0'
+    gaode_map3d = 'com.amap.api:3dmap:6.8.0'
+    gaode_navi = 'com.amap.api:navi-3dmap:6.6.0_3dmap6.7.0'
+    gaode_search = 'com.amap.api:search:6.5.0'
+    glide3 = "com.github.bumptech.glide:glide:3.7.0"
+    glide3_okhttp = 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+    glide4 = "com.github.bumptech.glide:glide:4.8.0"
+    glide4_compiler = 'com.github.bumptech.glide:compiler:4.8.0'
+    paho_android =  'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+    paho = 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1'
+    xlog = 'com.elvishew:xlog:1.4.0'
+    umeng_analytics =  'com.umeng.analytics:analytics:6.1.4'
+    crashreport = 'com.tencent.bugly:crashreport:2.6.6'
+    eventbus2 = 'de.greenrobot:eventbus:2.4.0'
+    otto =  'com.squareup:otto:1.3.8'
+    protobuf = 'com.google.protobuf:protobuf-java:3.5.1'
+    retrofit2= 'com.squareup.retrofit2:retrofit:2.3.0'
+    retrofit2_gson = 'com.squareup.retrofit2:converter-gson:2.3.0'
+    retrofit2_rxjava = 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    rxjava2 = 'io.reactivex.rxjava2:rxjava:2.1.5'
+    rxjava2_android = 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    rxjava1 =  'io.reactivex:rxjava:1.3.3'
+    rxjava1_android =  'io.reactivex:rxandroid:1.0.1'
+    rxpermissions =  'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    ym_download =  'com.github.yumodev:DownloadManager:v1.0.1'
+    prdownloader = 'com.mindorks.android:prdownloader:0.4.0'
+    filedownloader1 =  'com.liulishuo.filedownloader:library:1.7.4'
+    zxing = 'com.google.zxing:core:3.0.0'
 }

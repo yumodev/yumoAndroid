@@ -1,6 +1,6 @@
 package com.yumodev.arch.room;
 
-import android.arch.persistence.room.Delete;
+import androidx.room.Delete;
 import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;

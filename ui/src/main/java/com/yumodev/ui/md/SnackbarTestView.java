@@ -1,8 +1,7 @@
 package com.yumodev.ui.md;
 
 import android.graphics.Color;
-import android.support.design.internal.SnackbarContentLayout;
-import android.support.design.widget.Snackbar;
+import com.google.android.material.snackbar.Snackbar;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;

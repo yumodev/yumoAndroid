@@ -1,15 +1,11 @@
 package com.yumo.android.test.view.layout1;
 
-import android.arch.lifecycle.LifecycleOwner;
-import android.content.Context;
+import androidx.lifecycle.LifecycleOwner;
+
 import android.content.res.Configuration;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
-import com.yumo.android.R;
 import com.yumo.ui.arch.YmLifeCycle;
 
 public class InfoView implements YmLifeCycle {

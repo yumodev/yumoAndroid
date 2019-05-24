@@ -3,7 +3,7 @@ package com.yumodev.process.media;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.yumo.common.io.YmAssertUtil;
 import com.yumo.common.io.YmFileUtil;

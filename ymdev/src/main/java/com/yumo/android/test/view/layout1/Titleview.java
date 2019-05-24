@@ -1,6 +1,6 @@
 package com.yumo.android.test.view.layout1;
 
-import android.arch.lifecycle.LifecycleOwner;
+import androidx.lifecycle.LifecycleOwner;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.view.View;

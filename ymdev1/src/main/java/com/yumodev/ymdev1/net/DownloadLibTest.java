@@ -1,8 +1,6 @@
 package com.yumodev.ymdev1.net;
 
-import android.Manifest;
 import android.content.BroadcastReceiver;
-import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -11,13 +9,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
 import com.ymdev.download.providers.DownloadManager;
-import com.ymdev.download.providers.Downloads;
 import com.yumo.common.io.YmAdFileUtil;
 import com.yumo.common.io.YmFileUtil;
 import com.yumo.common.log.Log;

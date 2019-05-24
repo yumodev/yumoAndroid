@@ -17,11 +17,12 @@ package com.yumo.android.test.view.recyclerview.touchhelper;
  */
 
 import android.graphics.Canvas;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchUIUtil;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchUIUtil;
 import android.view.View;
 
+import com.yumo.android.R;
 import com.yumo.android.test.view.recyclerview.DragRecyclerView.DragItemTouchHelper;
 
 
@@ -35,12 +36,12 @@ class DragItemTouchUIUtilImpl1 {
         public void onDraw(Canvas c, RecyclerView recyclerView, View view,
                            float dX, float dY, int actionState, boolean isCurrentlyActive) {
             if (isCurrentlyActive) {
-                Object originalElevation = view.getTag(android.support.v7.recyclerview.R.id.item_touch_helper_previous_elevation);
+                Object originalElevation = view.getTag(R.id.item_touch_helper_previous_elevation);
                 if (originalElevation == null) {
                     originalElevation = ViewCompat.getElevation(view);
                     float newElevation = 1f + findMaxElevation(recyclerView, view);
                     ViewCompat.setElevation(view, newElevation);
-                    view.setTag(android.support.v7.recyclerview.R.id.item_touch_helper_previous_elevation, originalElevation);
+                    view.setTag(R.id.item_touch_helper_previous_elevation, originalElevation);
                 }
             }
             super.onDraw(c, recyclerView, view, dX, dY, actionState, isCurrentlyActive);
@@ -64,11 +65,11 @@ class DragItemTouchUIUtilImpl1 {
 
         @Override
         public void clearView(View view) {
-            final Object tag = view.getTag(android.support.v7.recyclerview.R.id.item_touch_helper_previous_elevation);
+            final Object tag = view.getTag(R.id.item_touch_helper_previous_elevation);
             if (tag != null && tag instanceof Float) {
                 ViewCompat.setElevation(view, (Float) tag);
             }
-            view.setTag(android.support.v7.recyclerview.R.id.item_touch_helper_previous_elevation, null);
+            view.setTag(R.id.item_touch_helper_previous_elevation, null);
             super.clearView(view);
         }
     }

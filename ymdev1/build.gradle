@@ -11,7 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
             abiFilters "armeabi", "armeabi-v7a"
         }
@@ -34,18 +34,20 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestCompile('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile "com.android.support:appcompat-v7:$rootProject.ext.support_version"
-    compile "com.android.support:design:$rootProject.ext.support_version"
-    compile("com.github.yumodev:ym_android_demo_lib:$rootProject.ext.demo_lib_version"){
+
+    implementation "$appcompat"
+    implementation "$material"
+    implementation("$ym_android_demo_lib"){
         exclude group: 'com.android.support'
     }
+
+    implementation "$ym_download"
+    implementation "$prdownloader"
+    implementation "$filedownloader1"
     compile project(':library')
     compile project(':libres')
-    implementation 'com.github.yumodev:DownloadManager:v1.0.1'
-    compile 'com.mindorks.android:prdownloader:0.4.0'
-    compile 'com.liulishuo.filedownloader:library:1.7.4'
     testCompile 'junit:junit:4.12'
 }

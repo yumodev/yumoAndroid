@@ -1,12 +1,10 @@
 package com.yumodev.ui.view.drag.test;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Rect;
-import android.support.annotation.NonNull;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.widget.ViewDragHelper;
+
+import androidx.annotation.NonNull;
+import androidx.core.view.ViewCompat;
+import androidx.customview.widget.ViewDragHelper;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;

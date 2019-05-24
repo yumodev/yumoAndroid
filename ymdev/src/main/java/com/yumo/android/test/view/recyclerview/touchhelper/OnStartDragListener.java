@@ -16,7 +16,7 @@
 
 package com.yumo.android.test.view.recyclerview.touchhelper;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Listener for manual initiation of a drag.

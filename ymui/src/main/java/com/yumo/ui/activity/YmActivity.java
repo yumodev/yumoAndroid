@@ -1,6 +1,6 @@
 package com.yumo.ui.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.yumo.ui.fragment.FragmentInfo;
 import com.yumo.ui.fragment.ISelectFragment;

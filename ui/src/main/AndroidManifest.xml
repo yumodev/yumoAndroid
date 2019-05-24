@@ -22,6 +22,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".view.touch.TouchTestActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
     </application>
 
 </manifest>

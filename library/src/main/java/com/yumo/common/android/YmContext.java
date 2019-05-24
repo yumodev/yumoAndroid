@@ -1,9 +1,9 @@
 package com.yumo.common.android;
 
 import android.content.Context;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DimenRes;
-import android.support.annotation.StringRes;
+import androidx.annotation.ColorRes;
+import androidx.annotation.DimenRes;
+import androidx.annotation.StringRes;
 
 /**
  * Created by yumodev on 16/11/28.

@@ -1,12 +1,11 @@
 package com.yumodev.ui.view.test;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.yumodev.ui.recyclerview.Define;
@@ -89,7 +88,7 @@ public class TestTouchEvent extends LinearLayout {
         return super.onTouchEvent(ev);
     }
 
-    class MyButton extends android.support.v7.widget.AppCompatButton {
+    class MyButton extends androidx.appcompat.widget.AppCompatButton {
 
         private final String LOG_TAG = "Button:"+ Define.INSTANCE.getLOG_TAG();
         public MyButton(Context context) {

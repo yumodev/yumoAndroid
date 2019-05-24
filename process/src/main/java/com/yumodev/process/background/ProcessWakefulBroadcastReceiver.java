@@ -5,9 +5,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.PowerManager;
 import android.os.Vibrator;
-import android.support.v4.content.WakefulBroadcastReceiver;
+import androidx.legacy.content.WakefulBroadcastReceiver;
 
-import com.elvishew.xlog.XLog;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.yumo.common.android.YmAppUtil;
 import com.yumo.common.log.Log;

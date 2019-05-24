@@ -1,6 +1,6 @@
 package com.yumo.ui.fragment;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by yumo on 2/3/16.

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.widget.PopupMenu;
+import androidx.appcompat.widget.PopupMenu;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -24,8 +24,6 @@ import android.widget.FrameLayout;
 import com.yumo.android.R;
 import com.yumo.android.common.YumoConfig;
 import com.yumo.demo.view.YmTestFragment;
-
-import java.util.HashMap;
 
 /**
  * Created by wks on 6/28/16.

@@ -18,7 +18,7 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.SystemClock;
 import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.format.DateUtils;

@@ -4,15 +4,14 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.graphics.Point;
-import android.support.v7.widget.ViewUtils;
+
+import androidx.appcompat.widget.ViewUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 
-import com.yumo.common.android.YmDisplayUtil;
 import com.yumo.demo.view.YmTestFragment;
 import com.yumodev.ui.R;
 import com.yumodev.ui.anim.view.PointAnimView;

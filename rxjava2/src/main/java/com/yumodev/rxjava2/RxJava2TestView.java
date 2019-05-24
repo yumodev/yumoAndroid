@@ -1,7 +1,7 @@
 package com.yumodev.rxjava2;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.yumo.demo.view.YmTestFragment;
@@ -13,13 +13,8 @@ import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 
-import io.reactivex.Observable;
-import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
-import io.reactivex.internal.schedulers.IoScheduler;
 import io.reactivex.schedulers.Schedulers;
 
 /**

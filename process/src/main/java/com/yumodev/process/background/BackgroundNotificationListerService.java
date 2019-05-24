@@ -10,14 +10,13 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.elvishew.xlog.XLog;
 import com.yumo.common.log.Log;
-import com.yumodev.process.Define;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

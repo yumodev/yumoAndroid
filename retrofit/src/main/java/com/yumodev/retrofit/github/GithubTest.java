@@ -1,7 +1,7 @@
 package com.yumodev.retrofit.github;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.yumo.demo.view.YmTestFragment;
 

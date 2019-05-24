@@ -12,16 +12,12 @@ import java.util.List;
 import com.yumo.android.R;
 import com.yumo.android.test.media.canvas.TestShapeFragment;
 
-import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.Window;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 /**
  * yumo

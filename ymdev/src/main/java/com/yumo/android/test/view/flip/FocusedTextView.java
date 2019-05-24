@@ -3,9 +3,8 @@ package com.yumo.android.test.view.flip;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
-public class FocusedTextView extends android.support.v7.widget.AppCompatTextView {
+public class FocusedTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     public FocusedTextView(Context context) {
         super(context);

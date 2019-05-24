@@ -1,12 +1,8 @@
 package com.yumo.ui.menu;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.StringRes;
-import android.view.Menu;
-import android.view.MenuItem;
+import androidx.annotation.StringRes;
+
 import android.view.View;
 
 /**

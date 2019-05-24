@@ -2,7 +2,7 @@ package com.yumo.android.test.io;
 
 import android.annotation.SuppressLint;
 import android.content.res.XmlResourceParser;
-import android.support.annotation.MenuRes;
+import androidx.annotation.MenuRes;
 import android.util.AttributeSet;
 import android.util.Xml;
 import android.view.InflateException;

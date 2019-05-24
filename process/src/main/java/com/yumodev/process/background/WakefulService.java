@@ -2,13 +2,8 @@ package com.yumodev.process.background;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
-import com.elvishew.xlog.XLog;
-import com.yumo.common.define.YmDefine;
-import com.yumo.common.util.YmDateUtil;
-import com.yumodev.process.Define;
-import com.yumodev.process.background.ProcessWakefulBroadcastReceiver;
 import com.yumodev.process.util.TestAppUtil;
 
 /**

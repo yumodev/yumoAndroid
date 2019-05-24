@@ -14,7 +14,7 @@ android {
         versionCode 2
         versionName "2.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
 //        System.out.println("name::"+getApplicationName())
 //        System.out.println("release:"+getApkReleaseName())
@@ -73,14 +73,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestCompile('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
   //  compile("com.github.yumodev:ym_android_demo_lib:$rootProject.ext.demo_lib_version"){
     //    exclude group: 'com.android.support'
 //    }
-    compile "com.github.yumodev:ym_android_demo_lib:$rootProject.ext.demo_lib_version"
-    compile 'com.android.support:appcompat-v7:26.1.0'
+
+    implementation "$ym_android_demo_lib"
+    implementation "$appcompat"
     compile project(':library')
     testCompile 'junit:junit:4.12'
 }

@@ -1,6 +1,6 @@
 package com.yumo.android.test.view.recyclerview.helper;
 
-import android.support.v4.view.ViewCompat;
+import androidx.core.view.ViewCompat;
 import android.view.View;
 
 /**

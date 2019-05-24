@@ -1,14 +1,13 @@
 package com.yumo.android.test.media.image;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.integration.okhttp3.OkHttpUrlLoader;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.model.GlideUrl;
-import com.yumo.android.MainActivity;
 import com.yumo.common.net.YmOkHttpUtil;
 import com.yumo.demo.view.YmTestFragment;
 

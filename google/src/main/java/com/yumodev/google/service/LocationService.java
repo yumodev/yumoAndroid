@@ -3,7 +3,7 @@ package com.yumodev.google.service;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 /**
  * Created by yumo on 2018/5/11.

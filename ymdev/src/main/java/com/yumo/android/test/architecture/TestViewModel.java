@@ -1,10 +1,10 @@
 package com.yumo.android.test.architecture;
 
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProviders;
-import android.graphics.ColorSpace;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProviders;
+
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.yumo.android.test.architecture.model.ModleTest;
 import com.yumo.demo.view.YmTestFragment;

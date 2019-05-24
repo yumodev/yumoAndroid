@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:background="@color/common_app_page">
 
-        <android.support.v4.widget.NestedScrollView
+        <androidx.core.widget.NestedScrollView
             android:id="@+id/nested_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -38,7 +38,7 @@
                         android:background="@drawable/corner_bg"/>
                 </LinearLayout>
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/list"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -47,7 +47,7 @@
 
 
 
-        </android.support.v4.widget.NestedScrollView>
+        </androidx.core.widget.NestedScrollView>
 
     </com.yumodev.ui.recyclerview.nestedscroll.TestNestedScrollViewRecyclerView>
 </FrameLayout>

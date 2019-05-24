@@ -13,7 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -37,20 +37,19 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestCompile('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    //如果用到gson解析 需要添加下面的依赖
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
 
-    compile 'io.reactivex.rxjava2:rxjava:2.1.5'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    implementation rootProject.ext.appcompat_v7
-    implementation rootProject.ext.support_design
-    implementation rootProject.ext.constraint_layout
-    implementation rootProject.ext.ym_android_demo_lib
+    implementation "$kotlin_jre"
+    implementation "$appcompat"
+    implementation "$constraint_layout"
+    implementation "$ym_android_demo_lib"
+
+    implementation "$retrofit2"
+    implementation "$retrofit2_gson"
+    implementation "$retrofit2_rxjava"
+    implementation "$rxjava2"
+    implementation "$rxjava2_android"
     testImplementation 'junit:junit:4.12'
 }

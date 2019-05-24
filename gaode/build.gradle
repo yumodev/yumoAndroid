@@ -10,7 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
             abiFilters 'armeabi-v7a'// 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
@@ -58,23 +58,19 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support:design:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation "$appcompat"
+    implementation "$material"
+    implementation "$constraint_layout"
 
-    compile 'com.amap.api:location:latest.integration'
-    compile 'com.amap.api:map2d:latest.integration'
-    compile 'com.amap.api:3dmap:latest.integration'
+    implementation "$gaode_location"
+    implementation "$gaode_map2d"
+    implementation "$gaode_map3d"
 
-    //compile 'com.amap.api:3dmap:latest.integration'
-    //compile 'com.amap.api:navi-3dmap:latest.integration'
-    //compile 'com.amap.api:search:latest.integration'
+    implementation "$ym_android_demo_lib"
 
-    implementation rootProject.ext.ym_android_demo_lib
-
-    compile project(':library')
+    implementation project(':library')
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 }

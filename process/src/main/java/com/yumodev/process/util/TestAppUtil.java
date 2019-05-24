@@ -13,13 +13,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.PowerManager;
 import android.provider.Settings;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.text.TextUtils;
 
 import com.elvishew.xlog.XLog;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.yumo.common.android.YmAppUtil;
-import com.yumo.common.util.YmDateUtil;
 
 import java.util.Iterator;
 import java.util.List;

@@ -13,7 +13,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         manifestPlaceholders = [
                 XG_ACCESS_ID:"2100283243",
@@ -70,12 +70,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile "com.android.support:appcompat-v7:$rootProject.ext.support_version"
-    compile "com.android.support:design:$rootProject.ext.support_version"
-    compile "com.android.support:support-v4:$rootProject.ext.support_version"
-    implementation rootProject.ext.ym_android_demo_lib
-    compile 'com.android.support:support-annotations:27.1.1'
+    implementation "$kotlin_jre"
+    implementation "$appcompat"
+    implementation "$material"
+    annotationProcessor "$annotation"
+    implementation "$constraint_layout"
+    implementation "$ym_android_demo_lib"
+    implementation "$xlog"
+    implementation "$umeng_analytics"
 
 
     compile project(':library')
@@ -85,16 +87,9 @@ dependencies {
    // compile 'com.tencent.bugly:crashreport:latest.release'
 //    compile 'com.flurry.android:analytics:8.2.0@aar'
 
-    compile 'com.elvishew:xlog:1.4.0'
-
-
-    compile 'com.umeng.analytics:analytics:6.1.4'
-
-
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:0.5'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 }
 
 

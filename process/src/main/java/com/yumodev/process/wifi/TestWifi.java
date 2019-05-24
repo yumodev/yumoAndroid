@@ -9,8 +9,8 @@ import android.content.pm.PackageManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 
 import com.yumo.common.util.YmDateUtil;
 import com.yumo.demo.view.YmTestFragment;

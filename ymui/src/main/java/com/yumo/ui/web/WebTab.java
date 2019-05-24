@@ -1,6 +1,6 @@
 package com.yumo.ui.web;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.yumo.common.log.Log;
 

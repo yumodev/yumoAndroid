@@ -14,12 +14,13 @@ import com.yumo.ui.viewpager.YmViewPager;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.PagerTabStrip;
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,7 +64,7 @@ public class ViewPagerDemoFragment extends Fragment {
 
     private YmViewPager mViewPager = null;
     private Spinner mSpinner = null;
-    private android.support.v4.view.PagerTabStrip mTabStrip = null;
+    private PagerTabStrip mTabStrip = null;
     private LinearLayout mBottomLinear = null;
 
     //weixin
@@ -106,7 +107,7 @@ public class ViewPagerDemoFragment extends Fragment {
 
         mViewPager = getView().findViewById(R.id.viewpager);
         mViewPager.setCanScroll(false);
-        mTabStrip = (android.support.v4.view.PagerTabStrip) getView().findViewById(R.id.tabstrip);
+        mTabStrip = (PagerTabStrip) getView().findViewById(R.id.tabstrip);
         mBottomLinear = (LinearLayout) getView().findViewById(R.id.bottom);
 
         //weixin
