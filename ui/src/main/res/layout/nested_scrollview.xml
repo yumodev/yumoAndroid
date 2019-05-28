@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.yumodev.ui.recyclerview.nestedscroll.TestNestedScrollViewRecyclerView
+    <com.yumo.android.test.view.recyclerview.nestedscroll.TestNestedScrollViewRecyclerView
         android:id="@+id/nested_scroll_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,5 +49,5 @@
 
         </androidx.core.widget.NestedScrollView>
 
-    </com.yumodev.ui.recyclerview.nestedscroll.TestNestedScrollViewRecyclerView>
+    </com.yumo.android.test.view.recyclerview.nestedscroll.TestNestedScrollViewRecyclerView>
 </FrameLayout>

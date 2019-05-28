@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.recyclerview.DragRecyclerView;
+package com.yumo.android.Recyclerview.DragRecyclerView;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -22,11 +22,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.yumo.android.R;
-import com.yumo.android.test.view.recyclerview.touchhelper.ItemTouchHelperAdapter;
 import com.yumo.common.android.YmDisplayUtil;
 import com.yumo.common.android.YmResUtil;
 import com.yumo.common.util.YmUtil;
+import com.yumo.android.R;
+import com.yumo.android.Recyclerview.touchlist.ItemTouchHelperAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -91,7 +91,7 @@ public class GridDragView extends FrameLayout {
 
     private void initFolder(){
         FolderDragView dragView = new FolderDragView(getContext());
-        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        LayoutParams lp = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.gravity = Gravity.CENTER;
         int leftMargin = DragManager.getInstance().getItemHorMargin();
         int rightMargin = DragManager.getInstance().getItemHorMargin();
@@ -123,8 +123,8 @@ public class GridDragView extends FrameLayout {
         DragManager.getInstance().setItemHorMargin(getResources().getDimensionPixelOffset(R.dimen.drag_item_hor_margin));
 
         //folderIcon
-        DragManager.getInstance().setFolderDrawIconPadding((int)YmResUtil.dipToPx(getContext(), 5));
-        DragManager.getInstance().setFolderDrawIconMargin((int)YmResUtil.dipToPx(getContext(), 5));
+        DragManager.getInstance().setFolderDrawIconPadding((int) YmResUtil.dipToPx(getContext(), 5));
+        DragManager.getInstance().setFolderDrawIconMargin((int) YmResUtil.dipToPx(getContext(), 5));
         DragManager.getInstance().setFolderIconColumnCount(2);
         DragManager.getInstance().setFolderIconRowCount(2);
     }
@@ -233,7 +233,7 @@ public class GridDragView extends FrameLayout {
         return dataList;
     }
 
-    private class ItemAdapter extends RecyclerView.Adapter<GridDragView.ItemAdapter.ItemViewHolder> implements ItemTouchHelperAdapter{
+    private class ItemAdapter extends RecyclerView.Adapter<GridDragView.ItemAdapter.ItemViewHolder> implements ItemTouchHelperAdapter {
         private LayoutInflater mInflater;
 
         public ItemAdapter(Context context) {
@@ -255,7 +255,7 @@ public class GridDragView extends FrameLayout {
                 DragUtil.createFolderIcon(itemViewHolder.mIconView, getTestFolderData());
             }
 
-            itemViewHolder.itemView.setOnClickListener(new View.OnClickListener(){
+            itemViewHolder.itemView.setOnClickListener(new OnClickListener(){
                 @Override
                 public void onClick(View view) {
                     if (itemBean.mType == DragItemBean.TYPE_FOLDER){
@@ -300,7 +300,7 @@ public class GridDragView extends FrameLayout {
                 lp.height = DragManager.getInstance().getItemHeight();
                 itemView.setLayoutParams(lp);
 
-                FrameLayout.LayoutParams iconLp = (FrameLayout.LayoutParams)mIconView.getLayoutParams();
+                LayoutParams iconLp = (LayoutParams)mIconView.getLayoutParams();
                 iconLp.width = DragManager.getInstance().getItemIconWidth();
                 iconLp.height = DragManager.getInstance().getItemIconHeight();
                 mIconView.setLayoutParams(iconLp);

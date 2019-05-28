@@ -3,8 +3,8 @@ package com.yumo.android.test.web.browser.utils;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 
+import com.yumo.android.common.utils.BusEvent;
 import com.yumo.android.test.web.browser.event.ReadModeEvent;
-import com.yumo.lib.otto.BusEvent;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

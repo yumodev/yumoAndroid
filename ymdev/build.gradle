@@ -108,7 +108,6 @@ dependencies {
     compile project(':libres')
     compile project(':ymzxingLiteLib')
     compile project(':ymui')
-    implementation project(':ymthirdlib')
     implementation "$otto"
 
 
@@ -116,6 +115,9 @@ dependencies {
     implementation "$gson"
     implementation "$retrofit2_gson"
     implementation "$kotlin_jre"
+
+    implementation "$eventbus3"
+
 
     androidTestCompile('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
         exclude group: 'com.android.support', module: 'support-annotations'

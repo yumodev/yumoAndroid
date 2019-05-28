@@ -56,10 +56,7 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="dialogWindowBottomAnim" parent="android:Animation">
-        <item name="android:windowEnterAnimation">@anim/common_bottom_in</item>
-        <item name="android:windowExitAnimation">@anim/common_bottom_out</item>
-    </style>
+
 
     <style name="common_dialog_full_style" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>

@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.recyclerview;
+package com.yumo.android.Recyclerview;
 
 import android.content.Context;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.yumo.android.R;
 
@@ -73,7 +74,7 @@ public class TestRecyclerViewOperation extends FrameLayout{
             itemViewHolder.mTextView.setText(data.mText);
 
 
-            itemViewHolder.mDeleteBtn.setOnClickListener(new View.OnClickListener(){
+            itemViewHolder.mDeleteBtn.setOnClickListener(new OnClickListener(){
                 @Override
                 public void onClick(View v) {
                     int position = itemViewHolder.getAdapterPosition();
@@ -83,7 +84,7 @@ public class TestRecyclerViewOperation extends FrameLayout{
                 }
             });
 
-            itemViewHolder.itemView.setOnClickListener(new View.OnClickListener(){
+            itemViewHolder.itemView.setOnClickListener(new OnClickListener(){
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(getContext(), data.mText, Toast.LENGTH_SHORT).show();
@@ -110,7 +111,7 @@ public class TestRecyclerViewOperation extends FrameLayout{
             mDataList.remove(position);
         }
 
-        View.OnClickListener mClickListener = new View.OnClickListener(){
+        OnClickListener mClickListener = new OnClickListener(){
             @Override
             public void onClick(View v) {
                 switch (v.getId()){

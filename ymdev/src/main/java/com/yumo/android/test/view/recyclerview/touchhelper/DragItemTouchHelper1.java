@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.recyclerview.touchhelper;
+package com.yumo.android.Recyclerview.touchhelper;
 
 /*
  * Copyright (C) 2015 The Android Open Source Project
@@ -242,7 +242,7 @@ public class DragItemTouchHelper1 extends RecyclerView.ItemDecoration
      * Using framework animators has the side effect of clashing with ItemAnimator, creating
      * jumpy UIs.
      */
-    List<DragItemTouchHelper1.RecoverAnimation> mRecoverAnimations = new ArrayList<DragItemTouchHelper1.RecoverAnimation>();
+    List<RecoverAnimation> mRecoverAnimations = new ArrayList<RecoverAnimation>();
 
     private int mSlop;
 
@@ -1876,7 +1876,8 @@ public class DragItemTouchHelper1 extends RecyclerView.ItemDecoration
 
         private int getMaxDragScroll(RecyclerView recyclerView) {
             if (mCachedMaxScrollSpeed == -1) {
-                mCachedMaxScrollSpeed = recyclerView.getResources().getDimensionPixelSize(R.dimen.item_touch_helper_max_drag_scroll_per_frame);
+                mCachedMaxScrollSpeed = recyclerView.getResources().getDimensionPixelSize(
+                        R.dimen.item_touch_helper_max_drag_scroll_per_frame);
             }
             return mCachedMaxScrollSpeed;
         }
@@ -1949,7 +1950,7 @@ public class DragItemTouchHelper1 extends RecyclerView.ItemDecoration
         }
 
         void onDraw(Canvas c, RecyclerView parent, RecyclerView.ViewHolder selected,
-                    List<DragItemTouchHelper1.RecoverAnimation> recoverAnimationList,
+                    List<RecoverAnimation> recoverAnimationList,
                     int actionState, float dX, float dY) {
             final int recoverAnimSize = recoverAnimationList.size();
             for (int i = 0; i < recoverAnimSize; i++) {
@@ -1968,7 +1969,7 @@ public class DragItemTouchHelper1 extends RecyclerView.ItemDecoration
         }
 
         void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.ViewHolder selected,
-                        List<DragItemTouchHelper1.RecoverAnimation> recoverAnimationList,
+                        List<RecoverAnimation> recoverAnimationList,
                         int actionState, float dX, float dY) {
             final int recoverAnimSize = recoverAnimationList.size();
             for (int i = 0; i < recoverAnimSize; i++) {

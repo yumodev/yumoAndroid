@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
+
 import com.yumo.android.test.view.recyclerview.helper.ViewHelper;
 
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
     }
 
     private ChangeInfo(ViewHolder oldHolder, ViewHolder newHolder, int fromX, int fromY, int toX,
-        int toY) {
+                       int toY) {
       this(oldHolder, newHolder);
       this.fromX = fromX;
       this.fromY = fromY;
@@ -297,14 +298,14 @@ public abstract class BaseItemAnimator extends SimpleItemAnimator {
 
   @Override
   public boolean animateChange(ViewHolder oldHolder, ViewHolder newHolder,
-      ItemHolderInfo preLayoutInfo, ItemHolderInfo postLayoutInfo) {
+                               ItemHolderInfo preLayoutInfo, ItemHolderInfo postLayoutInfo) {
     LogD("animateChange");
     return false;
   }
 
   @Override
   public boolean animateChange(ViewHolder oldHolder, ViewHolder newHolder, int fromX, int fromY,
-      int toX, int toY) {
+                               int toX, int toY) {
     LogD("animateChange");
     final float prevTranslationX = ViewCompat.getTranslationX(oldHolder.itemView);
     final float prevTranslationY = ViewCompat.getTranslationY(oldHolder.itemView);

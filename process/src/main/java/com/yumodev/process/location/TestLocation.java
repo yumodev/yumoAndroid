@@ -25,15 +25,12 @@ import com.yumo.common.android.YmLocationUtil;
 import com.yumo.common.log.Log;
 import com.yumo.common.util.YmDateUtil;
 import com.yumo.demo.view.YmTestFragment;
-import com.yumodev.process.test.TestEvent;
 import com.yumodev.process.util.LocationUtil;
 import com.yumodev.process.util.MediaClientService;
 
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
-
-import de.greenrobot.event.EventBus;
 
 /**
  * Created by yumo on 2018/3/30.
@@ -411,9 +408,6 @@ public class TestLocation extends YmTestFragment {
         MediaClientService.getInstance().startDrvingPlayer();
     }
 
-    public void testEvent(){
-        EventBus.getDefault().post(new TestEvent("Hello EventBus!"));
-    }
 
     public void testIsGeoCodeerPersent(){
         Geocoder geocoder = new Geocoder(getContext());

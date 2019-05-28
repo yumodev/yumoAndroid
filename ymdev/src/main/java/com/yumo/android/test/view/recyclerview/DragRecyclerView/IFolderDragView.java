@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.recyclerview.DragRecyclerView;
+package com.yumo.android.Recyclerview.DragRecyclerView;
 
 import android.view.View;
 

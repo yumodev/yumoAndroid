@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.recyclerview.DragRecyclerView;
+package com.yumo.android.Recyclerview.DragRecyclerView;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -7,8 +7,8 @@ import android.widget.ImageView;
 
 import com.yumo.android.R;
 import com.yumo.common.android.YmContext;
-import com.yumo.common.thread.YmHandlerThreadUtil;
 import com.yumo.common.media.YmImageUtil;
+import com.yumo.common.thread.YmHandlerThreadUtil;
 
 import java.util.List;
 

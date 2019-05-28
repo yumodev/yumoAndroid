@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.recyclerview.grid;
+package com.yumo.android.Recyclerview.grid;
 
 import android.content.Context;
 import android.content.res.Configuration;

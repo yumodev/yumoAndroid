@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.recyclerview.DragRecyclerView;
+package com.yumo.android.Recyclerview.DragRecyclerView;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -20,9 +20,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.yumo.android.R;
-import com.yumo.android.test.view.recyclerview.touchhelper.ItemTouchHelperAdapter;
 import com.yumo.common.util.YmUtil;
+import com.yumo.android.R;
+import com.yumo.android.Recyclerview.touchlist.ItemTouchHelperAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -221,7 +221,7 @@ public class FolderDragView extends FrameLayout implements IFolderDragView{
 
 
 
-                FrameLayout.LayoutParams iconLp = (FrameLayout.LayoutParams)mIconView.getLayoutParams();
+                LayoutParams iconLp = (LayoutParams)mIconView.getLayoutParams();
                 iconLp.width = DragManager.getInstance().getItemIconWidth();
                 iconLp.height = DragManager.getInstance().getItemIconHeight();
                 mIconView.setLayoutParams(iconLp);

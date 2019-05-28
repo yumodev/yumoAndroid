@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.recyclerview.touchhelper;
+package com.yumo.android.Recyclerview.touchhelper;
 
 /*
  * Copyright (C) 2015 The Android Open Source Project
@@ -23,8 +23,7 @@ import androidx.recyclerview.widget.ItemTouchUIUtil;
 import android.view.View;
 
 import com.yumo.android.R;
-import com.yumo.android.test.view.recyclerview.DragRecyclerView.DragItemTouchHelper;
-
+import com.yumo.android.Recyclerview.DragRecyclerView.DragItemTouchHelper;
 
 /**
  * Package private class to keep implementations. Putting them inside ItemTouchUIUtil makes them

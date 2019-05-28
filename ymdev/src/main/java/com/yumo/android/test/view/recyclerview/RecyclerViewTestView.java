@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.view.View;
 
 import com.yumo.android.R;
-import com.yumo.android.test.view.recyclerview.DragRecyclerView.GridDragView;
+import com.yumo.android.Recyclerview.TestRecyclerViewOperation;
 import com.yumo.android.test.view.recyclerview.nestedscroll.TestNestedScrollRecyclerView;
 import com.yumo.demo.view.YmTestFragment;
 import com.yumo.android.test.view.recyclerview.touchhelper.GridTouchHelperView;
@@ -72,7 +72,7 @@ public class RecyclerViewTestView extends YmTestFragment {
 
 
     public void testGridDragView(){
-        GridDragView view = new GridDragView(getContext());
+       com.yumo.android.Recyclerview.DragRecyclerView.GridDragView view = new com.yumo.android.Recyclerview.DragRecyclerView.GridDragView(getContext());
         view.setBackgroundColor(Color.GRAY);
         showTestView(view);
     }

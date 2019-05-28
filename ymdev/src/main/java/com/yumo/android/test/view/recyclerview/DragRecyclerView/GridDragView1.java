@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.recyclerview.DragRecyclerView;
+package com.yumo.android.Recyclerview.DragRecyclerView;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -17,9 +17,9 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.yumo.android.R;
-import com.yumo.android.test.view.recyclerview.touchhelper.ItemTouchHelperAdapter;
 import com.yumo.common.android.YmContext;
+import com.yumo.android.R;
+import com.yumo.android.Recyclerview.touchlist.ItemTouchHelperAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -117,7 +117,7 @@ public class GridDragView1 extends FrameLayout {
         public String mTitle;
     }
 
-    private class ItemAdapter extends RecyclerView.Adapter<GridDragView1.ItemAdapter.ItemViewHolder> implements ItemTouchHelperAdapter{
+    private class ItemAdapter extends RecyclerView.Adapter<GridDragView1.ItemAdapter.ItemViewHolder> implements ItemTouchHelperAdapter {
         private LayoutInflater mInflater;
 
         public ItemAdapter(Context context) {

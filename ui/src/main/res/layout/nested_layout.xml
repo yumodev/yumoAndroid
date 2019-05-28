@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.yumodev.ui.recyclerview.nestedscroll.TestNestedScrollRecyclerView
+    <com.yumo.android.Recyclerview.nestedscroll.TestNestedScrollRecyclerView
         android:id="@+id/nested_scroll_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/common_app_page">
 
-        <com.yumodev.ui.recyclerview.nestedscroll.NestedLayout
+        <com.yumo.android.Recyclerview.nestedscroll.NestedLayout
             android:id="@+id/nested_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
 
-        </com.yumodev.ui.recyclerview.nestedscroll.NestedLayout>
+        </com.yumo.android.Recyclerview.nestedscroll.NestedLayout>
 
-    </com.yumodev.ui.recyclerview.nestedscroll.TestNestedScrollRecyclerView>
+    </com.yumo.android.Recyclerview.nestedscroll.TestNestedScrollRecyclerView>
 </FrameLayout>

@@ -23,14 +23,10 @@ import com.umeng.analytics.MobclickAgent
 import com.yumo.common.log.Log
 import com.yumo.common.util.YmDateUtil
 import com.yumo.demo.config.Config
-import com.yumo.demo.view.YmTestActivity
 import com.yumo.demo.view.YmTestClassFragment
 import com.yumodev.process.background.LocalService
 import com.yumodev.process.background.BackgroundNotificationListerService
 import com.yumodev.process.remote.RemoteService
-import com.yumodev.process.test.TestEvent
-import com.yumodev.processlib.ProcessLib
-import de.greenrobot.event.EventBus
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -75,16 +71,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         showTestPackageHomePage()
 
         checkAndRequestPermission()
-
-        EventBus.getDefault().register(this)
-
         //startActivity(Intent(this@MainActivity, YmTestActivity::class.java))
 
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        EventBus.getDefault().unregister(this)
     }
 
 
@@ -118,10 +110,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_camera -> {
                 // Handle the camera action
 
-                 var i = 2 / 0
+                // var i = 2 / 0
             }
             R.id.nav_gallery -> {
-                ProcessLib.getInstance().createBug();
             }
             R.id.nav_slideshow -> {
 
@@ -246,16 +237,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Toast.makeText(this, "wifi state deny", Toast.LENGTH_SHORT).show();
             }
         }
-    }
-
-    /**
-     *
-     * 使用onEvent来接收事件，那么接收事件和分发事件在一个线程中执行
-     *
-     * @param event
-     */
-
-    fun onEvent(event: TestEvent) {
-        Toast.makeText(this, event.tag, Toast.LENGTH_SHORT).show()
     }
 }

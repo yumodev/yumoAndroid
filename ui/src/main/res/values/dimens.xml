@@ -21,13 +21,6 @@
     <dimen name="dimen_40">40dp</dimen>
 
 
-    <!--DragMerge-->
-    <dimen name="drag_icon_margin">5dp</dimen>
-    <dimen name="drag_item_hor_margin">16dp</dimen>
-    <dimen name="drag_item_hor_space">16dp</dimen>
-    <dimen name="drag_item_ver_space">16dp</dimen>
-    <dimen name="drag_item_top_margin">16dp</dimen>
-    <dimen name="drag_item_bottom_margin">16dp</dimen>
 
 
 </resources>

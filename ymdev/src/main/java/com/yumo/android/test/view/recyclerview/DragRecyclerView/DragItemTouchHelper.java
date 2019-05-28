@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.recyclerview.DragRecyclerView;
+package com.yumo.android.Recyclerview.DragRecyclerView;
 
 /*
  * Copyright (C) 2015 The Android Open Source Project
@@ -258,7 +258,7 @@ public class DragItemTouchHelper extends RecyclerView.ItemDecoration
      * Using framework animators has the side effect of clashing with ItemAnimator, creating
      * jumpy UIs.
      */
-    List<DragItemTouchHelper.RecoverAnimation> mRecoverAnimations = new ArrayList<DragItemTouchHelper.RecoverAnimation>();
+    List<RecoverAnimation> mRecoverAnimations = new ArrayList<RecoverAnimation>();
 
     private int mSlop;
 
@@ -1366,7 +1366,7 @@ public class DragItemTouchHelper extends RecyclerView.ItemDecoration
      * dragging View overlaps multiple other views, Callback chooses the closest View with which
      * dragged View might have changed positions. Although this approach works for many use cases,
      * if you have a custom LayoutManager, you can override
-     * {@link #chooseDropTarget(RecyclerView.ViewHolder, java.util.List, int, int)} to select a
+     * {@link #chooseDropTarget(RecyclerView.ViewHolder, List, int, int)} to select a
      * custom drop target.
      * <p>
      * When a View is swiped, ItemTouchHelper animates it until it goes out of bounds, then calls
@@ -1472,7 +1472,7 @@ public class DragItemTouchHelper extends RecyclerView.ItemDecoration
          *
          * @param flags           The flag value that include any number of movement flags.
          * @param layoutDirection The layout direction of the View. Can be obtained from
-         *                        {@link ViewCompat#getLayoutDirection(android.view.View)}.
+         *                        {@link ViewCompat#getLayoutDirection(View)}.
          * @return Updated flags which uses relative flags ({@link #START}, {@link #END}) instead
          * of {@link #LEFT}, {@link #RIGHT}.
          * @see #convertToAbsoluteDirection(int, int)
@@ -1607,7 +1607,7 @@ public class DragItemTouchHelper extends RecyclerView.ItemDecoration
          * <p>
          * This method is used when selecting drop target for the dragged View. After Views are
          * eliminated either via bounds check or via this method, resulting set of views will be
-         * passed to {@link #chooseDropTarget(RecyclerView.ViewHolder, java.util.List, int, int)}.
+         * passed to {@link #chooseDropTarget(RecyclerView.ViewHolder, List, int, int)}.
          * <p>
          * Default implementation returns true.
          *
@@ -1967,7 +1967,7 @@ public class DragItemTouchHelper extends RecyclerView.ItemDecoration
         }
 
         void onDraw(Canvas c, RecyclerView parent, RecyclerView.ViewHolder selected,
-                    List<DragItemTouchHelper.RecoverAnimation> recoverAnimationList,
+                    List<RecoverAnimation> recoverAnimationList,
                     int actionState, float dX, float dY) {
             final int recoverAnimSize = recoverAnimationList.size();
             for (int i = 0; i < recoverAnimSize; i++) {
@@ -1986,7 +1986,7 @@ public class DragItemTouchHelper extends RecyclerView.ItemDecoration
         }
 
         void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.ViewHolder selected,
-                        List<DragItemTouchHelper.RecoverAnimation> recoverAnimationList,
+                        List<RecoverAnimation> recoverAnimationList,
                         int actionState, float dX, float dY) {
             final int recoverAnimSize = recoverAnimationList.size();
             for (int i = 0; i < recoverAnimSize; i++) {
