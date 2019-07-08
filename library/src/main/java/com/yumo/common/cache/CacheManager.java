@@ -9,6 +9,7 @@ import com.yumo.common.io.YmAdFileUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.security.Key;
 
 /**
  * Created by yumodev on 17/9/9.
@@ -50,8 +51,7 @@ public class CacheManager {
             bmp = mLruCache.get(key);
         }
 
-        if (mDiskLruCache != null && bmp != null){
-
+        if (mDiskLruCache != null && bmp == null){
         }
         return null;
     }

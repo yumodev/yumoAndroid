@@ -20,7 +20,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
+import okhttp3.Cache;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -37,10 +42,41 @@ public class OkHttpTestView extends YmTestFragment {
 
     private final String LOG_TAG = "OkHttpTestView";
 
-
     public void testGetBaiduPage(){
-        GetUrlAsyncTask task = new GetUrlAsyncTask();
-        task.execute("Http://www.baidu.com");
+        Executors.newCachedThreadPool().execute(new Runnable() {
+            @Override
+            public void run() {
+                gethttpage("www.baidu.com");
+            }
+        });
+    }
+
+    /**
+     * 同步获取一个网页的内容
+     * @param url
+     */
+    private void gethttpage(final String url){
+        //配置缓存的路径，和缓存空间的大小
+        Cache cache = new Cache(new File("/sdcard/yumo"),10*10*1024);
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .readTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .connectTimeout(15, TimeUnit.SECONDS)
+                //打开缓存
+                .cache(cache)
+                .build();
+
+        Request request = new Request.Builder().url(url).build();
+
+        try {
+            Response response = okHttpClient.newCall(request).execute();
+            if (response != null && response.isSuccessful()){
+                Log.d(LOG_TAG, "getByAndroidHttp:" + response.body().string());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void testGetPage(){
@@ -73,8 +109,9 @@ public class OkHttpTestView extends YmTestFragment {
     }
 
 
-
-
+    /**
+     * 测试下载文件
+     */
     public void testDownFile(){
         String url = "http://xz6.jb51.net:81/201601/books/Java_JVM(jb51.net).rar";
         new DownFileUrlAsyncTask().execute(url);
@@ -146,6 +183,9 @@ public class OkHttpTestView extends YmTestFragment {
     }
 
 
+    /**
+     * 测试获取ip
+     */
     public void testGetIp(){
         new Thread(new Runnable() {
             @Override

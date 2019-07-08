@@ -2,6 +2,7 @@ package com.yumo.android.test.media.canvas;
 
 import android.view.View;
 
+import com.yumo.android.test.media.canvas.test.TestArc1View;
 import com.yumo.android.test.media.canvas.test.TestLinearGradient1;
 import com.yumo.demo.view.YmTestFragment;
 import com.yumo.android.test.media.canvas.test.CanvasDemoView;
@@ -61,6 +62,13 @@ public class CanvasTestView extends YmTestFragment {
      */
     public void testArcView(){
         showTestView(new TestArcView(getContext()));
+    }
+
+    /**
+     * 绘制圆形和扇形
+     */
+    public void testArc1View(){
+        showTestView(new TestArc1View(getContext()));
     }
 
 

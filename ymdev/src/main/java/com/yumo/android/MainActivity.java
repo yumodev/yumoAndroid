@@ -20,6 +20,8 @@ import android.webkit.WebView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.integration.okhttp3.OkHttpUrlLoader;
 import com.bumptech.glide.load.model.GlideUrl;
+import com.tbruyelle.rxpermissions2.RxPermissions;
+import com.yumo.common.android.PermissionUtil;
 import com.yumo.common.android.YmAppUtil;
 import com.yumo.common.log.Log;
 import com.yumo.common.net.YmOkHttpUtil;
@@ -59,6 +61,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         GlideUrl.class
                         ,InputStream.class
                         ,new OkHttpUrlLoader.Factory(YmOkHttpUtil.getOkHttpClient()));
+
+        PermissionUtil.requestPermission(this);
     }
 
     private void setupUI(){
@@ -118,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
         });
-        showTestPackageHomePage();
+        //showTestPackageHomePage();
         UpdateTitleObservable.getInstance().addObserver(new Observer() {
             @Override
             public void update(Observable o, Object arg) {

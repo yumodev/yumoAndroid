@@ -37,7 +37,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //implementation 'com.android.support:appcompat-v7:26.1.0'
-    compile "androidx.appcompat:appcompat:$rootProject.ext.support_version"
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.support_version"
 
     implementation "$appcompat"
     implementation "$zxing"

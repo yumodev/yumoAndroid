@@ -1,11 +1,11 @@
-package com.yumodev.process.test;
+package com.yumo.android.test.sys;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.Settings;
 
+import com.yumo.android.common.utils.TestAppUtil;
 import com.yumo.demo.view.YmTestFragment;
-import com.yumodev.process.util.TestAppUtil;
 
 /**
  * Created by yumo on 2018/6/7.

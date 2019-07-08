@@ -1,11 +1,10 @@
-package com.yumodev.process.test;
+package com.yumo.android.test.sys;
 
 import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 
 import com.yumo.demo.view.YmTestFragment;
-import com.yumodev.process.util.TestAppUtil;
 
 public class TestLetv extends YmTestFragment {
 

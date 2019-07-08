@@ -1,24 +1,22 @@
 /**
- * SystemInfoTestView.java
+ * PhoneInfoTestView.java
  * yumodev
  * 2015-7-30
  */
 package com.yumo.android.test.sys;
 
 import com.yumo.common.android.YmAppUtil;
-import com.yumo.common.android.YmContext;
-import com.yumo.common.android.YmDeviceUtil;
 import com.yumo.common.log.Log;
+import com.yumo.common.util.Reflect;
+import com.yumo.demo.anno.YmMethodTest;
 import com.yumo.demo.view.YmTestFragment;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.ActivityManager;
+import android.annotation.TargetApi;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -32,24 +30,15 @@ import androidx.core.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
-import android.text.format.Formatter;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
 import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
 import java.util.TimeZone;
 import java.util.UUID;
 
@@ -57,49 +46,11 @@ import java.util.UUID;
  * 打印手机信息
  * [android.os.Build 常用常量](https://blog.csdn.net/dzkdxyx/article/details/78879521)
  */
-public class SystemInfoTestView extends YmTestFragment {
+public class PhoneInfoTestView extends YmTestFragment {
     private final String LOG_TAG = "YmDev";
 
-    public void testShowAppInfo() {
-        StringBuilder sb = new StringBuilder();
-        //获取程序最大的可分配的内存
-        String appMaxMemory = Formatter.formatFileSize(YmContext.getInstance().getAppContext(), YmDeviceUtil.getAppMaxMemory());
 
-        sb.append("\n应用程序最大内存：" + Formatter.formatFileSize(getActivity(), Runtime.getRuntime().maxMemory()) + " ");
-        sb.append("\n应用程序总共内存：" + Formatter.formatFileSize(getActivity(), Runtime.getRuntime().totalMemory()) + " ");
-        sb.append("\n应用程序空闲存：" + Formatter.formatFileSize(getActivity(), Runtime.getRuntime().freeMemory()) + " ");
-        sb.append("\nAPP内存："+ String.format("%02f", getRam(getActivity().getApplicationContext(), true)));
-
-        showToastMessage(sb.toString());
-    }
-
-    @SuppressLint("NewApi")
-    public void testPrintSystemDir() {
-        StringBuilder sb = new StringBuilder();
-        //data/data/<package>/cache
-        sb.append("\ngetCacheDir():" + getContext().getCacheDir());
-        //data/data/<package>/files
-        sb.append("\ngetFilesDir():" + getContext().getFilesDir());
-        //data/data/<package>
-        sb.append("\ngetDataDir():" + getContext().getDataDir());
-        //data/data/<package>/app_
-        sb.append("\ngetDir():" + getContext().getDir("", 0));
-        //data/data/<package>/code_cache
-        sb.append("\ngetCodeCacheDir():" + getContext().getCodeCacheDir());
-        ///data/app/com.yumo.android-1/base.apk
-        sb.append("\ngetPackageCodePath():" + getContext().getPackageCodePath());
-
-
-        ///storage/emulated/0/Android/data/com.yumo.android/cache
-        sb.append("\ngetExternalCacheDir():" + getContext().getExternalCacheDir().getAbsolutePath());
-        ///storage/emulated/0/Android/data/com.yumo.android/files
-        sb.append("\ngetExternalFilesDir():" + getContext().getExternalFilesDir(null));
-
-        sb.append("\ngetObbDir():" + getContext().getObbDir());
-        showToastMessage(sb.toString());
-        Log.i(LOG_TAG, sb.toString());
-    }
-
+    @YmMethodTest(name = "打印系统信息")
     public void testShowSystemInfo(){
         StringBuilder sb = new StringBuilder();
         sb.append(android.os.Build.BOARD+"\n");//获取设备基板名称
@@ -128,18 +79,22 @@ public class SystemInfoTestView extends YmTestFragment {
         showToastMessage(sb.toString());
     }
 
+    @YmMethodTest(name = "显示设备型号：build.model COL_AL10")
     public void testBuildModel(){
         showToastMessage(Build.MODEL);
     }
 
+    @YmMethodTest(name = "显示设备品牌：HORNOR")
     public void testBuildBrand(){
         showToastMessage(Build.BRAND);
     }
 
+    @YmMethodTest(name = "显示产品名称：build.product COL_AL10")
     public void testBuildProduct(){
         showToastMessage(Build.PRODUCT);
     }
 
+    @YmMethodTest(name = "获取设备制造商：Build.MANUFACTURER HUAWEI")
     public void testBuildManufacturer(){
         showToastMessage(Build.MANUFACTURER);
     }
@@ -150,6 +105,7 @@ public class SystemInfoTestView extends YmTestFragment {
      */
     Long mLastelapsedRealtime;
     Long mLastTime;
+    @YmMethodTest(name = "显示开机时间SystemClock.elapsedRealtime()")
     public void testRootTime() {
         long time = SystemClock.elapsedRealtime();
         //String str = YmDateUtil.formatDuration(time);
@@ -157,165 +113,47 @@ public class SystemInfoTestView extends YmTestFragment {
         //String str = DateUtils.formatDateRange(getContext(), 0, time, DateUtils.FORMAT_24HOUR);
         mLastTime = System.currentTimeMillis();
         mLastelapsedRealtime = SystemClock.elapsedRealtime();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true){
-                    try {
-                        Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    long time = SystemClock.elapsedRealtime();
-                    //String str = YmDateUtil.formatDuration(time);
-                    String str = DateUtils.formatElapsedTime(time / 1000);
-                    long differ = mLastTime+ SystemClock.elapsedRealtime() - mLastelapsedRealtime - System.currentTimeMillis();
-
-                    Log.i("yumodev", time+" "+str+" "+differ);
-
-                }
-
-            }
-        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                while (true){
+//                    try {
+//                        Thread.sleep(10);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                    long time = SystemClock.elapsedRealtime();
+//                    //String str = YmDateUtil.formatDuration(time);
+//                    String str = DateUtils.formatElapsedTime(time / 1000);
+//                    long differ = mLastTime+ SystemClock.elapsedRealtime() - mLastelapsedRealtime - System.currentTimeMillis();
+//
+//                    Log.i("yumodev", time+" "+str+" "+differ);
+//
+//                }
+//
+//            }
+//        }).start();
         showToastMessage(time + " " + str);
     }
 
     /**
      * 当前线程运行时间
      */
+    @YmMethodTest(name = "当前线程的运行时间")
     public void testCurrentThreadTime() {
         long time = SystemClock.currentThreadTimeMillis();
         //String str = YmDateUtil.formatDuration(time);
         String str = DateUtils.formatElapsedTime(time / 1000);
-        showToastMessage(time + " " + str);
-
+        showToastMessage(time + "ms " + str +"s");
     }
 
-    /**
-     * 获取签名信息
-     */
-    public void testSignatures() {
-        showToastMessage(getSignatures(getContext()));
-    }
-
-    /**
-     * 打印所有的签名信息
-     */
-    public void testPrintAllSingatures() {
-        PackageManager pm = getContext().getPackageManager();
-        List<PackageInfo> apps = pm.getInstalledPackages(PackageManager.GET_SIGNATURES);
-        Iterator<PackageInfo> iter = apps.iterator();
-        while (iter.hasNext()) {
-            PackageInfo packageinfo = iter.next();
-            StringBuilder sb = new StringBuilder();
-            sb.append("Name:" + packageinfo.applicationInfo.loadLabel(pm).toString());
-            sb.append(" " + packageinfo.packageName);
-            sb.append(" " + packageinfo.signatures[0].toCharsString());
-            sb.append("\n");
-            Log.i(LOG_TAG, sb.toString());
-        }
-    }
-
-    /**
-     * 获取当前签名
-     *
-     * @param context
-     * @return
-     */
-    private String getSignatures(Context context) {
-        PackageManager pm = context.getPackageManager();
-        List<PackageInfo> apps = pm.getInstalledPackages(PackageManager.GET_SIGNATURES);
-        Iterator<PackageInfo> iter = apps.iterator();
-        while (iter.hasNext()) {
-            PackageInfo packageinfo = iter.next();
-            String packageName = packageinfo.packageName;
-            if (packageName.equals(context.getPackageName())) {
-                return packageinfo.signatures[0].toCharsString();
-            }
-        }
-        return null;
-    }
-
-    /**
-     * 打印所有的SHA1
-     */
-    public void testPrintSHA1() {
-        PackageManager pm = getContext().getPackageManager();
-        List<PackageInfo> apps = pm.getInstalledPackages(PackageManager.GET_SIGNATURES);
-        Iterator<PackageInfo> iter = apps.iterator();
-        while (iter.hasNext()) {
-            PackageInfo packageinfo = iter.next();
-            StringBuilder sb = new StringBuilder();
-            sb.append("Name:" + packageinfo.applicationInfo.loadLabel(pm).toString());
-            sb.append(" " + packageinfo.packageName);
-            //sb.append(" "+packageinfo.signatures[0].toCharsString());
-
-            byte[] cert = packageinfo.signatures[0].toByteArray();
-            MessageDigest md = null;
-            try {
-                md = MessageDigest.getInstance("SHA1");
-            } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-            }
-            byte[] publicKey = md.digest(cert);
-            StringBuffer hexString = new StringBuffer();
-            for (int i = 0; i < publicKey.length; i++) {
-                String appendString = Integer.toHexString(0xFF & publicKey[i])
-                        .toUpperCase(Locale.US);
-                if (appendString.length() == 1)
-                    hexString.append("0");
-                hexString.append(appendString);
-                hexString.append(":");
-            }
-
-            String result = hexString.toString();
-            result = result.substring(0, result.length() - 1);
-            sb.append(" " + result);
-
-            sb.append("\n");
-            Log.i(LOG_TAG, sb.toString());
-        }
-
-    }
-
-
-    /**
-     * 显示当前的SHA1
-     */
-    public void testShowSha1() {
-        try {
-            Context context = getActivity().getApplicationContext();
-            PackageInfo info = context.getPackageManager().getPackageInfo(
-                    context.getPackageName(), PackageManager.GET_SIGNATURES);
-            byte[] cert = info.signatures[0].toByteArray();
-            MessageDigest md = MessageDigest.getInstance("SHA1");
-            byte[] publicKey = md.digest(cert);
-            StringBuffer hexString = new StringBuffer();
-            for (int i = 0; i < publicKey.length; i++) {
-                String appendString = Integer.toHexString(0xFF & publicKey[i])
-                        .toUpperCase(Locale.US);
-                if (appendString.length() == 1)
-                    hexString.append("0");
-                hexString.append(appendString);
-                hexString.append(":");
-            }
-
-            String result = hexString.toString();
-            result = result.substring(0, result.length() - 1);
-            android.util.Log.i(LOG_TAG, result);
-            showToastMessage(result);
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     /**
      * 获取IEMI， 只能支持拥有通话功能的设备，返厂不支持。 需要android.permission.READ_PHONE_STATE， 部分rom有可能有bug。
      * 0000000000000
      */
+    @YmMethodTest(name = "IMEI-第一个")
     public void testImei() {
         TelephonyManager manager = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
         if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
@@ -333,17 +171,44 @@ public class SystemInfoTestView extends YmTestFragment {
         showToastMessage(imei);
     }
 
-    /**
-     * 判断当前是否位系统签名
-     */
-    public void testIsSystemSha1() {
-        String sha1 = YmAppUtil.getAppSha1(getContext());
-        if ("27:19:6E:38:6B:87:5E:76:AD:F7:00:E7:EA:84:E4:C6:EE:E3:3D:FA".equals(sha1)) {
-            showToastMessage("是系统签名");
-        } else {
-            showToastMessage("不是系统签名");
+
+    @TargetApi(Build.VERSION_CODES.M)
+    @YmMethodTest(name = "IMED-第一个getDeviceId(0)")
+    public void testImei0() {
+        TelephonyManager manager = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            showToastMessage("未获取权限");
+            return;
         }
+        String imei = manager.getDeviceId(0);
+        showToastMessage(imei);
     }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    @YmMethodTest(name = "IMEI-第二个 getDeviceId(1)")
+    public void testImei1() {
+        TelephonyManager manager = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            showToastMessage("未获取权限");
+            return;
+        }
+        String imei = manager.getDeviceId(1);
+        showToastMessage(imei);
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    @YmMethodTest(name = "IMEI-IMED 反射获取")
+    public void testImei2() {
+        TelephonyManager manager = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            showToastMessage("未获取权限");
+            return;
+        }
+        String imei = Reflect.on(manager).call("getDeviceId", 1).get();
+        showToastMessage(imei);
+
+    }
+
 
 
     /**
@@ -434,7 +299,7 @@ public class SystemInfoTestView extends YmTestFragment {
     }
 
     public void testGetIpAddress(){
-        showToastMessage(SystemInfoTestView.getIpAddress(getContext()));
+        showToastMessage(PhoneInfoTestView.getIpAddress(getContext()));
     }
 
     public static String getIpAddress(Context context){
@@ -785,55 +650,7 @@ public class SystemInfoTestView extends YmTestFragment {
         }
     }
 
-    /**
-     * 获取总的RAM内存.单位为KB，如果格式后单位为GB
-     * void
-     * 2015-7-1
-     */
-    @SuppressLint("NewApi")
-    public float getRam(Context context, boolean format) {
-        if (context == null){
-            return 0f;
-        }
 
-        float totalRam = 0f;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            ActivityManager.MemoryInfo ramInfo = new ActivityManager.MemoryInfo();
-
-
-            ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-            if (activityManager == null) {
-                return 0f;
-            }
-
-            activityManager.getMemoryInfo(ramInfo);
-            totalRam = ramInfo.totalMem / 1024;
-            if (format) {
-                totalRam = totalRam / (1024 * 1024);
-            }
-        } else {
-            String file_path = "/proc/meminfo";
-            String ram_info;
-            String[] arrayOfRam;
-
-            try {
-                FileReader fr = new FileReader(file_path);
-                BufferedReader localBufferedReader = new BufferedReader(fr, 8192);
-                ram_info = localBufferedReader.readLine();
-                arrayOfRam = ram_info.split("\\s+");
-
-                totalRam = Float.valueOf(arrayOfRam[1]).intValue();
-                localBufferedReader.close();
-                if (format) {
-                    totalRam = totalRam / (1024 * 1024);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return totalRam;
-    }
 
 
     public void testIsScreenOn(){

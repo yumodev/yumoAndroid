@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="common_margin">16dp</dimen>
+    <dimen name="divider_height">0.5dp</dimen>
+    <dimen name="toolbar_height">50dip</dimen>
+</resources>
