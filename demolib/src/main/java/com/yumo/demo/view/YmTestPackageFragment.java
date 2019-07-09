@@ -23,6 +23,7 @@ import com.zhy.adapter.recyclerview.base.ViewHolder;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,7 +32,7 @@ import java.util.List;
  */
 public class YmTestPackageFragment extends YmDemoBaseFragment {
     private RecyclerView mListView = null;
-    private List<YmPackageInfo> mDataList = null;
+    private List<YmPackageInfo> mDataList = new ArrayList<>();
     private int mToolbarVisible = View.VISIBLE;
 
     @Override

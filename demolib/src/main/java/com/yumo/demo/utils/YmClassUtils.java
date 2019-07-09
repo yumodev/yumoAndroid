@@ -156,59 +156,59 @@ public class YmClassUtils {
         return apkName;
     }
 
-//    /**
-//     * 获取一个子类
-//     * yumodev
-//     * void
-//     * 2014-11-6
-//     */
-//    public static String getConfigPackageData(Context context, Class<?> superClass){
-//        String packageName = YmUIDemoManager.getInstance().getAppPackageName(context);
-//        String apkName = getApkName(context);
-//        if (TextUtils.isEmpty(apkName)){
-//            return "";
-//        }
-//
-//        Log.i(LOG_TAG, apkName);
-//        DexFile dexFile;
-//        try {
-//            dexFile = new DexFile(apkName);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return "";
-//        }
-//
-//        String subClassName = "";
-//        try{
-//            Enumeration<String> apkClassNames = dexFile.entries();
-//            while (apkClassNames.hasMoreElements()) {
-//                String className = apkClassNames.nextElement();
-//                Log.i(LOG_TAG, className);
-//                if (className.indexOf('$') >= 0){
-//                    continue;
-//                }
-//
-//                final Class<?> cls = Class.forName(className);
-//                if(superClass.isAssignableFrom(cls)
-//                        && ! className.equals(superClass.getName())) {
-//                    subClassName = className;
-//                  break;
-//                }
-//            }
-//        }catch ( ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }finally {
-//            try {
-//                dexFile.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return subClassName;
-//    }
-
-
+    /**
+     * 获取一个子类
+     * yumodev
+     * void
+     * 2014-11-6
+     */
     public static String getConfigPackageData(Context context, Class<?> superClass){
+        String packageName = YmUIDemoManager.getInstance().getAppPackageName(context);
+        String apkName = getApkName(context);
+        if (TextUtils.isEmpty(apkName)){
+            return "";
+        }
+
+        Log.i(LOG_TAG, apkName);
+        DexFile dexFile;
+        try {
+            dexFile = new DexFile(apkName);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
+        }
+
+        String subClassName = "";
+        try{
+            Enumeration<String> apkClassNames = dexFile.entries();
+            while (apkClassNames.hasMoreElements()) {
+                String className = apkClassNames.nextElement();
+                Log.i(LOG_TAG, className);
+                if (className.indexOf('$') >= 0 || !className.contains(packageName)){
+                    continue;
+                }
+
+                final Class<?> cls = Class.forName(className);
+                if(superClass.isAssignableFrom(cls)
+                        && ! className.equals(superClass.getName())) {
+                    subClassName = className;
+                  break;
+                }
+            }
+        }catch ( ClassNotFoundException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                dexFile.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return subClassName;
+    }
+
+
+    public static String getConfigPackageData1(Context context, Class<?> superClass){
         String packageName = YmUIDemoManager.getInstance().getAppPackageName(context);
         String apkName = getApkName(context);
         if (TextUtils.isEmpty(apkName)){
@@ -233,6 +233,10 @@ public class YmClassUtils {
                             continue;
                         }
 
+                        if (className.indexOf(packageName) == 0){
+                            continue;
+                        }
+
                         try {
                             final Class<?> cls = Class.forName(className);
                             if(superClass.isAssignableFrom(cls)
@@ -242,8 +246,9 @@ public class YmClassUtils {
                             }
                         }catch (Exception e){
                             e.printStackTrace();
+                        }catch (NoSuchFieldError e){
+                            e.printStackTrace();
                         }
-
                     }
                 } catch (IOException e) {
                     throw new IOException("Error at loading dex file '" +
