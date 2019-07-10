@@ -1,2 +1,2 @@
-include ':ymdev', ':library', ':ym_java', ':ymui', ':test', ':ymdev1', ':libres', ':ymweb', ':ymzxingLiteLib', ':protobuf', ':xglib', ':process', ':arch', ':demolib'
+include ':ymdev', ':library', ':ym_java', ':ymui', ':test', ':ymdev1', ':libres', ':ymweb', ':ymzxingLiteLib', ':protobuf', ':xglib', ':process', ':arch', ':demolib', ':lottie'
 include ':rxjava1', ':rxjava2', ':glide',  ':retrofit', ':ui', ':kotlin', ':glide3', ':baidulbs', ':gaode', ':flurry', ':paho'

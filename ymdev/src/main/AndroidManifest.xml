@@ -261,6 +261,13 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+
+        <!--vpn-->
+        <receiver android:name=".receivers.VpnReceivers">
+            <intent-filter>
+                <action android:name="vpn.connectivity" />
+            </intent-filter>
+        </receiver>
         <!-- Receiver-->
 
         <!--contentProvider-->

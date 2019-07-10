@@ -254,7 +254,7 @@ public class YmFileUtil {
      * @return
      * @throws IOException
      */
-    public static String readToString(String fileName) throws IOException{
+    public static String readToString(String fileName){
         if (TextUtils.isEmpty(fileName)){
             return null;
         }
@@ -264,7 +264,7 @@ public class YmFileUtil {
         }
 
 
-        return String.valueOf(readToBytes(fileName));
+        return new String(readToBytes(fileName));
     }
 
     /**

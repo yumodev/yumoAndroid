@@ -432,6 +432,7 @@ public class PhoneInfoTestView extends YmTestFragment {
      *
      * 不需要动态权限
      */
+    @YmMethodTest(name = "获取AndroidID")
     public void testGetAndroidId() {
         final String androidId = Settings.Secure.getString(
                 getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -441,6 +442,7 @@ public class PhoneInfoTestView extends YmTestFragment {
     /**
      * 2.3以后可用，获取序列号
      */
+    @YmMethodTest(name = "获取序列号")
     public void testSerialNumber() {
         showToastMessage(Build.SERIAL);
     }

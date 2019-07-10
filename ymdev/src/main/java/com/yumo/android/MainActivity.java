@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
         });
-        //showTestPackageHomePage();
+        showTestPackageHomePage();
         UpdateTitleObservable.getInstance().addObserver(new Observer() {
             @Override
             public void update(Observable o, Object arg) {
