@@ -1,6 +1,8 @@
 package com.yumo.android.test.sys;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.net.VpnService;
 import com.yumo.android.common.YumoConfig;
 import com.yumo.common.io.ConvertObjectToString;
@@ -55,4 +57,14 @@ public class VpnTestView extends YmTestFragment {
   public void openVpn(){
     startActivity(new Intent("android.net.vpn.SETTINGS"));
   }
+
+
+  @YmMethodTest(name = "检测VPN链接")
+  public void checkVPN() {
+    ConnectivityManager cm = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+    boolean connected =  cm.getNetworkInfo(ConnectivityManager.TYPE_VPN).isConnectedOrConnecting();
+    showToastMessage("是否已连接："+connected);
+
+  }
+
 }
