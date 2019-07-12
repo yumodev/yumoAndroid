@@ -1,9 +1,14 @@
 package com.yumo.android.test.sys;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.net.VpnService;
+import android.os.Build;
+import androidx.annotation.RequiresApi;
 import com.yumo.android.common.YumoConfig;
 import com.yumo.common.io.ConvertObjectToString;
 import com.yumo.common.log.Log;
@@ -64,7 +69,40 @@ public class VpnTestView extends YmTestFragment {
     ConnectivityManager cm = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
     boolean connected =  cm.getNetworkInfo(ConnectivityManager.TYPE_VPN).isConnectedOrConnecting();
     showToastMessage("是否已连接："+connected);
-
   }
 
+  public void testCheckVPN23(){
+    boolean connected = checkVPN23(getContext());
+    showToastMessage("是否已连接："+connected);
+  }
+
+
+  @TargetApi(Build.VERSION_CODES.M)
+  public void testCheckTest(){
+    ConnectivityManager connectivityManager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+    Network activeNetwork = connectivityManager.getActiveNetwork();
+    NetworkCapabilities caps = connectivityManager.getNetworkCapabilities(activeNetwork);
+    boolean vpnInUse = caps.hasTransport(NetworkCapabilities.TRANSPORT_VPN);
+    showToastMessage("是否已连接："+vpnInUse);
+  }
+
+  @TargetApi(Build.VERSION_CODES.LOLLIPOP) private boolean checkVPN23(Context context){
+    ConnectivityManager cm =
+        (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+    Network[] networks = cm.getAllNetworks();
+    Log.i(YumoConfig.LOG_TAG, "Network count: " + networks.length);
+    boolean result = false;
+    for (int i = 0; i < networks.length; i++) {
+      NetworkCapabilities caps = cm.getNetworkCapabilities(networks[i]);
+      Log.i(YumoConfig.LOG_TAG, "Network " + i + ": " + networks[i].toString());
+      Log.i(YumoConfig.LOG_TAG, "VPN transport is: " + caps.hasTransport(NetworkCapabilities.TRANSPORT_VPN));
+      Log.i(YumoConfig.LOG_TAG, "NOT_VPN capability is: " + caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_VPN));
+      if (caps.hasTransport(NetworkCapabilities.TRANSPORT_VPN)){
+        result = true;
+        break;
+      }
+    }
+    return result;
+
+  }
 }
