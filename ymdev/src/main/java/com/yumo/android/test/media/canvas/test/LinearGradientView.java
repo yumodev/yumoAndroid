@@ -20,6 +20,33 @@ import android.view.View;
  * CLAMP: 短点之外延续端点处的颜色
  * MIRROR: 镜像
  * REPEAT: 重复
+ *
+ * android:angle
+ * Integer，代表渐变颜色的角度， 0 is left to right, 90 is bottom to top. 必须是45的整数倍. 
+ * 默认是 0.该属性只有在type=linear情况下起作用，默认的type为linear。
+ * 默认情况下，从左到右：
+ *
+ *                                                            
+ *
+ * xml代码：<gradient 
+ *         android:startColor="#000000"
+ *         android:endColor="#ffffff"
+ *         />
+ *                                        
+ *
+ * angle=270，从上到下 ：               
+ *
+ * xml代码：<gradient 
+ *         android:startColor="#000000"
+ *         android:endColor="#ffffff"
+ *         android:angle="270"
+ *         />
+ * ---------------------
+ * 作者：zjdyhant
+ * 来源：CSDN
+ * 原文：https://blog.csdn.net/zjdyhant/article/details/46537647
+ * 版权声明：本文为博主原创文章，转载请附上博文链接！
+ *
  */
 public class LinearGradientView extends View{
 

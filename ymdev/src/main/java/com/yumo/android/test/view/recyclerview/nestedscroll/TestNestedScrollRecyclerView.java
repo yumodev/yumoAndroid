@@ -20,6 +20,8 @@ import java.util.List;
 
 /**
  * Created by wks on 15/11/22.
+ * 让RecyclerView上面的部件跟随其一起滑动实现方法
+ * https://www.jianshu.com/p/af299c1ec76c
  */
 public class TestNestedScrollRecyclerView extends FrameLayout {
 
@@ -45,14 +47,15 @@ public class TestNestedScrollRecyclerView extends FrameLayout {
     }
 
     public void setupUI(){
-        mHeadView = findViewById(R.id.header);
+        View view = View.inflate(getContext(), R.layout.nested_scrollview, this);
+        mHeadView = view.findViewById(R.id.header);
         initTestData();
-        mListView = findViewById(R.id.list);
+
+
+        mListView = view.findViewById(R.id.list);
         mListView.setLayoutManager(new LinearLayoutManager(getContext()));
         mAdapter = new ItemAdapter(getContext());
         mListView.setAdapter(mAdapter);
-
-        addView(mListView);
     }
 
     private void initTestData(){

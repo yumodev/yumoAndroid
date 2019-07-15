@@ -68,4 +68,8 @@ public class RecyclerViewTestView extends YmTestFragment {
         view.setBackgroundColor(Color.GRAY);
         showTestView(view);
     }
+
+
+
+
 }
