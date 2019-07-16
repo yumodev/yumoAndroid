@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.WindowManager;
+import com.yumo.common.android.YmContext;
 
 /**
  * Created by yumodev on 5/13/16.
@@ -42,6 +43,10 @@ public class YmViewUtils {
 
     public static int dip2px(Context cx, float dpValue) {
         return (int) (dpValue * getDensity(cx) + 0.5f);
+    }
+
+    public static int dip2px(float dpValue) {
+        return (int) (dpValue * getDensity(YmContext.getAppContext()) + 0.5f);
     }
 
     public static int px2dip(Context cx, float pxValue) {

@@ -1,4 +1,4 @@
-package com.yumo.android.test.view.view;
+package com.yumo.android.test.view.viewpager;
 
 import com.yumo.demo.view.YmTestFragment;
 

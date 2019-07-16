@@ -3,7 +3,7 @@
  * yumo
  * 2015-2-3
  */
-package com.yumo.android.test.view.view;
+package com.yumo.android.test.view.viewpager;
 
 import java.util.ArrayList;
 import java.util.List;
