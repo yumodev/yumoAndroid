@@ -11,6 +11,9 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.view.View
+import com.yumo.demo.config.Config
+import com.yumo.demo.view.YmTestClassFragment
 
 class LottieActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -36,6 +39,8 @@ class LottieActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     toggle.syncState()
 
     navView.setNavigationItemSelectedListener(this)
+
+    showTestPackageHomePage()
   }
 
   override fun onBackPressed() {
@@ -88,5 +93,19 @@ class LottieActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
     drawerLayout.closeDrawer(GravityCompat.START)
     return true
+  }
+
+  private fun showTestPackageHomePage() {
+    //        YmTestPackageFragment fragment = new YmTestPackageFragment();
+    //        getSupportFragmentManager().beginTransaction().replace(R.id.test_fragment_id, fragment, "package").commit();
+
+    val bundle = Bundle()
+    bundle.putString("packageName", packageName)
+    bundle.putInt(Config.ARGUMENT_TOOLBAR_VISIBLE, View.GONE)
+    val classFragment = YmTestClassFragment()
+    classFragment.arguments = bundle
+    val ft = supportFragmentManager.beginTransaction()
+    ft.addToBackStack(null)
+    ft.replace(com.yumo.demo.R.id.test_fragment_id, classFragment).commit()
   }
 }

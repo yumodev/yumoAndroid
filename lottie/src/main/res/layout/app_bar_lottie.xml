@@ -24,7 +24,12 @@
 
   </com.google.android.material.appbar.AppBarLayout>
 
-  <include layout="@layout/content_lottie"/>
+  <!--<include layout="@layout/content_main" />-->
+
+  <FrameLayout
+      android:id="@+id/test_fragment_id"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:id="@+id/fab"

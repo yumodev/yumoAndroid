@@ -32,6 +32,8 @@ public class BannerFragment1 extends Fragment {
   int mViewPagerPageMargin = YmViewUtils.dip2px(20);
   int mViewPagerMargin = YmViewUtils.dip2px(30);
 
+  int mRealSize = 2;
+
   @Nullable @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
@@ -141,7 +143,7 @@ public class BannerFragment1 extends Fragment {
   private void initData() {
     // 图片资源id数组
     //imageResIds = new int[]{R.drawable.banner1, R.drawable.banner2, R.drawable.banner3, R.drawable.banner4, R.drawable.banner5};
-    imageResIds = new int[]{R.drawable.banner1, R.drawable.banner2};
+    imageResIds = new int[]{R.drawable.banner1, R.drawable.banner2,R.drawable.banner1};
     if (imageResIds.length <=2){
       //viewPager.setClipChildren(true);
     }
@@ -184,7 +186,7 @@ public class BannerFragment1 extends Fragment {
         return 0;
       }
 
-      if (imageViewList.size() == 1 || imageViewList.size() == 2){
+      if (imageViewList.size() == 1){
         return imageViewList.size();
       }
       return Integer.MAX_VALUE;
@@ -202,7 +204,7 @@ public class BannerFragment1 extends Fragment {
     // 1. 返回要显示的条目内容, 创建条目
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-      int newPosition = position % imageViewList.size();
+      int newPosition = position % mRealSize;
       Log.i(LOG_TAG, "instantiateItem初始化: " + position +" "+newPosition);
 
      View view = imageViewList.get(newPosition);
