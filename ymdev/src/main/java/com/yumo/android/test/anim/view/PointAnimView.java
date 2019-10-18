@@ -1,4 +1,4 @@
-package com.yumo.android.test.ui.anim.view;
+package com.yumo.android.test.anim.view;
 
 
 import android.animation.TypeEvaluator;

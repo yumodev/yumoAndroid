@@ -18,6 +18,7 @@ public class TestClass implements IGetPackageData {
         List<YmPackageInfo> dataList = new ArrayList<>();
         dataList.add(new YmPackageInfo("Kotlin", "com.yumo.android.test.kotlin"));
         dataList.add(new YmPackageInfo("media", "com.yumo.android.test.media"));
+        dataList.add(new YmPackageInfo("anim", "com.yumo.android.test.anim"));
         dataList.add(new YmPackageInfo("插件","com.yumo.android.test.plugin"));
         dataList.add(new YmPackageInfo("API","com.yumo.android.test.api"));
         dataList.add(new YmPackageInfo("Activity","com.yumo.android.test.activity"));

@@ -1,4 +1,4 @@
-package com.yumo.android.test.ui.anim;
+package com.yumo.android.test.anim;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -13,7 +13,7 @@ import android.widget.ImageView;
 
 import com.yumo.demo.view.YmTestFragment;
 import com.yumo.android.R;
-import com.yumo.android.test.ui.anim.view.PointAnimView;
+import com.yumo.android.test.anim.view.PointAnimView;
 import com.yumo.android.Recyclerview.Define;
 
 /**

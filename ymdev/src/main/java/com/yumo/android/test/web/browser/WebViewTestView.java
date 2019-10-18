@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -577,6 +580,41 @@ public class WebViewTestView extends YmTestFragment {
                 return false;
             }
         });
+
+        showTestView(mWebView);
+    }
+
+    public void test1(){
+        WebView mWebView = new WebView(getContext());
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.loadUrl("https://www.skyhide.net/flexibleh5/us_welfarecard/");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WebView.setWebContentsDebuggingEnabled(true);
+        }
+        mWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return false;
+            }
+
+
+            @Override public void onReceivedError(WebView view, int errorCode, String description,
+                String failingUrl) {
+                super.onReceivedError(view, errorCode, description, failingUrl);
+                Log.i(LOG_TAG, "onReceivedError:"+errorCode+" "+description);
+
+            }
+        });
+
+        mWebView.setWebChromeClient(new WebChromeClient(){
+            @Override
+            public void onConsoleMessage(String message, int lineNumber, String sourceID) {
+                super.onConsoleMessage(message, lineNumber, sourceID);
+                Log.i(LOG_TAG, "onConsoleMessage:"+message+" "+lineNumber+" "+sourceID);
+            }
+        });
+
+
 
         showTestView(mWebView);
     }

@@ -22,6 +22,17 @@ public class SharedTestView extends YmTestFragment {
         }
     }
 
+    public void testSharedSystemWithUrl(){
+        Intent send = new Intent(Intent.ACTION_SEND);
+        send.setType("text/plain");
+        send.putExtra(Intent.EXTRA_TEXT, "http://yumodev.com/test/test_scheme.html");
+        send.putExtra(Intent.EXTRA_SUBJECT, "test");
+        try {
+            startActivity(Intent.createChooser(send, "action send sys"));
+        } catch (android.content.ActivityNotFoundException ex) {
+        }
+    }
+
     public void testSharedCustom(){
         showFragment(new SharedCustomFragment());
     }

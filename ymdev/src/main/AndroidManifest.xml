@@ -165,7 +165,7 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".test.media.ViewAnimationDemoActivity"
+            android:name=".test.anim.ViewAnimationDemoActivity"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".test.media.AudioDemoActivity"

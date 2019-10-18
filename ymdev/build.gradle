@@ -127,6 +127,7 @@ dependencies {
 
     implementation "$retrofit2"
     implementation "$gson"
+    implementation "$fastjson"
     implementation "$retrofit2_gson"
     implementation "$kotlin_jre"
 

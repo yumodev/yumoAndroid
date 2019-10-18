@@ -39,6 +39,7 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Calendar;
 import java.util.Enumeration;
+import java.util.Locale;
 import java.util.TimeZone;
 import java.util.UUID;
 
@@ -640,8 +641,8 @@ public class PhoneInfoTestView extends YmTestFragment {
             now.setTimeZone(tz);
         } catch (Exception e) {
             e.printStackTrace();
+            showToastMessage(e.getMessage());
         }
-
     }
 
     public void testSetSysDate() {
@@ -652,7 +653,13 @@ public class PhoneInfoTestView extends YmTestFragment {
         }
     }
 
-
+    public void testLanguageCode() {
+        String languageCode = Locale.getDefault().getLanguage();
+        if (languageCode == null || "".equals(languageCode)) {
+            languageCode = "en";
+        }
+        showToastMessage(languageCode);
+    }
 
 
     public void testIsScreenOn(){
@@ -660,6 +667,13 @@ public class PhoneInfoTestView extends YmTestFragment {
         boolean screen = powerManager.isScreenOn();
         showToastMessage("屏幕状态："+screen);
     }
+
+    public void testGetSimCountryIso(){
+        TelephonyManager tm = (TelephonyManager) getContext().getSystemService(Context.TELEPHONY_SERVICE);
+        String simCountryIso = tm.getSimCountryIso();
+        showToastMessage(simCountryIso);
+    }
+
 
 
 

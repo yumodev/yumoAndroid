@@ -3,7 +3,7 @@
  * yumodev
  * 2014-12-4
  */
-package com.yumo.android.test.media.animation;
+package com.yumo.android.test.anim;
 
 import com.yumo.android.R;
 

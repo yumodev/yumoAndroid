@@ -54,6 +54,7 @@ ext {
   room_compiler = "androidx.room:room-compiler:" + arch_version
 
   gson = 'com.google.code.gson:gson:2.6.1'
+  fastjson = 'com.alibaba:fastjson:1.2.10'
   stetho = 'com.facebook.stetho:stetho:1.5.0'
   debug_db = 'com.amitshekhar.android:debug-db:1.0.1'
   flurry = 'com.flurry.android:analytics:7.2.3@aar'

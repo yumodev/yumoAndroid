@@ -4,7 +4,7 @@
  * 2014-12-4
  * TODO
  */
-package com.yumo.android.test.media;
+package com.yumo.android.test.anim;
 
 import com.yumo.android.R;
 
